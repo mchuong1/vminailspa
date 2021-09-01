@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#F8F6F7',
     opacity: '90%',
     zIndex: 99,
+    color: 'black'
   },
   toolBar: {
     display: 'flex',
