@@ -1,15 +1,9 @@
 import React from 'react';
 import { makeStyles, Button, Paper } from '@material-ui/core';
-import { Cloudinary } from '@cloudinary/base';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-
-const cld = new Cloudinary({
-  cloud: {
-    cloudName: 'dgpijcm0x',
-  },
-});
+import { manicure, pedicure, massage, smileGirl, coverEyesGirl, nailBottles, photos } from '../utils/photos';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
@@ -106,18 +100,26 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5px',
       top: '53vh',
     },
+  },
+  carousel: {
+    height: '72%',
+    '& div': {
+      height: '100%',
+    },
+    '& div div': {
+      height: '100%',
+    }
+  },
+  indicator: {
+    position: 'absolute',
+    bottom: 0,
+    height: '10% !important',
   }
 }));
 
 const LandingPage = (props) => {
   const classes = useStyles();
   const { history } = props;
-  const smileGirl = cld.image('VNMiNailSpa/SmileGirl');
-  const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl');
-  const manicure = cld.image('VNMiNailSpa/Manicure');
-  const pedicure = cld.image('VNMiNailSpa/Pedicure');
-  const massage = cld.image('VNMiNailSpa/Massage');
-  const nailBottles = cld.image('VNMiNailSpa/Nail_Bottles');
 
   const serviceDescription = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
 
