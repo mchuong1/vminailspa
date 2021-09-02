@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Button } from '@material-ui/core';
+import { makeStyles, Button, Paper } from '@material-ui/core';
 import { Cloudinary } from '@cloudinary/base';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
@@ -22,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
   landingMessage: {
     padding: '20px',
     position: 'absolute',
-    top: '95px'
+    top: '7vh',
+    '& h1': {
+      fontSize: '53px',
+    },
   },
   circle: {
     borderRadius: '50%',
@@ -44,19 +47,20 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     '& h1': {
       position: 'absolute',
-      fontSize: '72px',
+      fontSize: '53px',
+      paddingLeft: '20px',
     },
     '& p': {
       position: 'absolute',
       top: '28vh',
       padding: '20px',
-      width: '190px'
+      width: '190px',
     },
     '& button': {
       position: 'absolute',
       marginLeft: '5px',
-      top: '46vh'
-    }
+      top: '46vh',
+    },
   },
   rectangle: {
     backgroundColor: '#F8F6F7',
@@ -66,6 +70,23 @@ const useStyles = makeStyles((theme) => ({
     top: '25vh',
     zIndex: -1,
   },
+  services: {
+    height: 'fit-content',
+    padding: '20px',
+    backgroundColor: '#F8F6F7',
+    '& h1': {
+      fontSize: '53px',
+    },
+  },
+  serviceCard: {
+    '& h1': {
+      paddingLeft: '20px',
+      fontSize: '30px',
+    },
+    '& p': {
+      padding: '20px',
+    },
+  },
 }));
 
 const LandingPage = (props) => {
@@ -73,34 +94,90 @@ const LandingPage = (props) => {
   const { history } = props;
   const smileGirl = cld.image('VNMiNailSpa/SmileGirl');
   const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl');
+  const manicure = cld.image('VNMiNailSpa/Manicure');
+  const pedicure = cld.image('VNMiNailSpa/Pedicure');
+  const massage = cld.image('VNMiNailSpa/Massage');
+
+  const serviceDescription = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
+
+  const ServiceCard = ({ title, description, image }) => (
+    <Paper classes={{ root: classes.serviceCard }}>
+      <AdvancedImage cldImg={image} style={{ width: '100%' }} />
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </Paper>
+  );
+
+  ServiceCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.shape({}).isRequired,
+  };
 
   return (
-    <div id="landingpage">
+    <div id='landingpage'>
       <div className={classes.landingSection}>
         <div className={classes.landingMessage}>
           <h1>Lorem Ipsum</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s</p>
-          <Button
-            variant="contained"
-            classes={{ root: classes.button }}
-            >
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industrys standard dummy text
+            ever since the 1500s
+          </p>
+          <Button variant='contained' classes={{ root: classes.button }}>
             Book Now
           </Button>
         </div>
-        <AdvancedImage cldImg={smileGirl} style={{ width: '180%', position: 'absolute', bottom: 0, left: 0 }} alt="Beautiful Girl Smile Brunette Nails"/>
-        <div className={classes.circle}/>
+        <AdvancedImage
+          cldImg={smileGirl}
+          style={{ width: '180%', position: 'absolute', bottom: 0, left: 0 }}
+          alt='Beautiful Girl Smile Brunette Nails'
+        />
+        <div className={classes.circle} />
       </div>
       <div className={classes.aboutSection}>
         <h1>About Us</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+        <Button variant='contained' classes={{ root: classes.button }}>
+          Read More
+        </Button>
+        <AdvancedImage
+          cldImg={coverEyesGirl}
+          style={{
+            width: '130%',
+            right: '-20vh',
+            bottom: '31vh',
+            position: 'absolute',
+          }}
+        />
+        <div className={classes.rectangle} />
+      </div>
+      <div className={classes.services}>
+        <h1>Our Services</h1>
+        <ServiceCard
+          title='Manicure'
+          description={serviceDescription}
+          image={manicure}
+        />
+        <ServiceCard
+          title='Pedicure'
+          description={serviceDescription}
+          image={pedicure}
+        />
+        <ServiceCard
+          title='Massage'
+          description={serviceDescription}
+          image={massage}
+        />
         <Button
-            variant="contained"
-            classes={{ root: classes.button }}
-            >
-            Read More
-          </Button>
-        <AdvancedImage cldImg={coverEyesGirl} style={{width: '130%', right: '-20vh', bottom: '31vh', position: 'absolute'}}/>
-        <div className={classes.rectangle}/>
+          variant='contained'
+          classes={{ root: classes.button }}
+        >
+          View More
+        </Button>
       </div>
     </div>
   );
