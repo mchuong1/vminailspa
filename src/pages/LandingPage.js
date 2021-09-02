@@ -87,6 +87,26 @@ const useStyles = makeStyles((theme) => ({
       padding: '20px',
     },
   },
+  WhyChooseUs: {
+    position: 'relative',
+    height: '93vh',
+    '& h1': {
+      position: 'absolute',
+      fontSize: '53px',
+      paddingLeft: '20px',
+    },
+    '& p': {
+      position: 'absolute',
+      top: '28vh',
+      padding: '20px',
+      width: '190px',
+    },
+    '& button': {
+      position: 'absolute',
+      marginLeft: '5px',
+      top: '53vh',
+    },
+  }
 }));
 
 const LandingPage = (props) => {
@@ -97,6 +117,7 @@ const LandingPage = (props) => {
   const manicure = cld.image('VNMiNailSpa/Manicure');
   const pedicure = cld.image('VNMiNailSpa/Pedicure');
   const massage = cld.image('VNMiNailSpa/Massage');
+  const nailBottles = cld.image('VNMiNailSpa/Nail_Bottles');
 
   const serviceDescription = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
 
@@ -178,6 +199,18 @@ const LandingPage = (props) => {
         >
           View More
         </Button>
+      </div>
+      <div className={classes.WhyChooseUs}>
+        <h1>Why Choose Us?</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s</p>
+        <Button
+          variant='contained'
+          classes={{ root: classes.button }}
+        >
+          View More
+        </Button>
+        <AdvancedImage cldImg={nailBottles} style={{ width: '120%', position: 'absolute', bottom: '22vh', left: '23vw'}}/>
+        <div className={classes.rectangle}/>
       </div>
     </div>
   );
