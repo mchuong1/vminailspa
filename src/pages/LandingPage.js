@@ -3,9 +3,9 @@ import { makeStyles, Button, Paper } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import { manicure, pedicure, massage, smileGirl, coverEyesGirl, nailBottles, photos } from '../utils/photos';
+import { manicure, pedicure, massage, smileGirl, coverEyesGirl, nailBottles } from '../utils/photos';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   landingSection: {
     backgroundColor: '#F8F6F7',
     zIndex: -1,
@@ -117,9 +117,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const LandingPage = (props) => {
+const LandingPage = () => {
   const classes = useStyles();
-  const { history } = props;
+  // const { history } = props;
 
   const serviceDescription = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
 
