@@ -12,7 +12,8 @@ const useStyles = makeStyles({
     textAlign: 'center',
     justifyItems: 'center',
     padding: '20px',
-    display: 'grid'
+    display: 'grid',
+    paddingTop: '40px'
   },
   socialBar: {
     display: 'flex',

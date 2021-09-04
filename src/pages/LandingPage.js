@@ -14,6 +14,7 @@ import {
   // photos,
 } from '../utils/photos';
 import { testimonial } from '../utils/testimonial';
+import Contact from '../components/Contact';
 
 const useStyles = makeStyles(() => ({
   landingSection: {
@@ -132,7 +133,7 @@ const useStyles = makeStyles(() => ({
       paddingLeft: '20px',
     },
   },
-  testimonialContainer: {
+  container: {
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
@@ -245,13 +246,14 @@ const LandingPage = () => {
         <h1>Testimonial</h1>
           <Carousel>
           {testimonial.map((item, i) => (
-            <Paper classes={{root: classes.testimonialContainer}}  key={i}>
+            <Paper classes={{root: classes.container}}  key={i}>
               <p>{item.message}</p>
               <h2>{item.name}</h2>
             </Paper>
           ))}
           </Carousel>
       </div>
+      <Contact />
     </div>
   );
 };
