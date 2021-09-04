@@ -3,7 +3,17 @@ import { makeStyles, Button, Paper } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import { manicure, pedicure, massage, smileGirl, coverEyesGirl, nailBottles } from '../utils/photos';
+import Carousel from 'react-material-ui-carousel';
+import {
+  manicure,
+  pedicure,
+  massage,
+  smileGirl,
+  coverEyesGirl,
+  nailBottles,
+  // photos,
+} from '../utils/photos';
+import { testimonial } from '../utils/testimonial';
 
 const useStyles = makeStyles(() => ({
   landingSection: {
@@ -108,13 +118,24 @@ const useStyles = makeStyles(() => ({
     },
     '& div div': {
       height: '100%',
-    }
+    },
   },
   indicator: {
     position: 'absolute',
     bottom: 0,
     height: '10% !important',
-  }
+  },
+  testimonial: {
+    padding: '20px',
+    '& h1': {
+      fontSize: '53px',
+      paddingLeft: '20px',
+    },
+  },
+  testimonialContainer: {
+    padding: '20px',
+    backgroundColor: '#F8F6F7',
+  },
 }));
 
 const LandingPage = () => {
@@ -195,24 +216,41 @@ const LandingPage = () => {
           description={serviceDescription}
           image={massage}
         />
-        <Button
-          variant='contained'
-          classes={{ root: classes.button }}
-        >
+        <Button variant='contained' classes={{ root: classes.button }}>
           View More
         </Button>
       </div>
       <div className={classes.WhyChooseUs}>
         <h1>Why Choose Us?</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s</p>
-        <Button
-          variant='contained'
-          classes={{ root: classes.button }}
-        >
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industrys standard dummy text ever
+          since the 1500s
+        </p>
+        <Button variant='contained' classes={{ root: classes.button }}>
           View More
         </Button>
-        <AdvancedImage cldImg={nailBottles} style={{ width: '120%', position: 'absolute', bottom: '22vh', left: '23vw'}}/>
-        <div className={classes.rectangle}/>
+        <AdvancedImage
+          cldImg={nailBottles}
+          style={{
+            width: '120%',
+            position: 'absolute',
+            bottom: '22vh',
+            left: '23vw',
+          }}
+        />
+        <div className={classes.rectangle} />
+      </div>
+      <div className={classes.testimonial}>
+        <h1>Testimonial</h1>
+          <Carousel>
+          {testimonial.map((item, i) => (
+            <Paper classes={{root: classes.testimonialContainer}}  key={i}>
+              <p>{item.message}</p>
+              <h2>{item.name}</h2>
+            </Paper>
+          ))}
+          </Carousel>
       </div>
     </div>
   );

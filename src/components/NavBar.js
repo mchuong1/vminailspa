@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     zIndex: 100,
     position: 'fixed',
-    width: '100%',
+    width: '70%',
     top: 0,
     transform: 'translateX(-200%)',
     transition: 'transform .2s ease-in-out',
@@ -155,9 +155,9 @@ const Navbar = (props) => {
       className={`${classes.navMenu}`}
     >
       <div className={classes.iconRow}>
-        <AdvancedImage cldImg={logo} style={{ maxHeight: '100px' }} alt="Tipsy Logo"/>
+        <AdvancedImage cldImg={logo} style={{ maxHeight: '50px' }} alt="Tipsy Logo"/>
         <IconButton edge='start' onClick={handleClick}>
-          <ChevronLeftIcon style={{ fontSize: '2em' }} />
+          <ChevronLeftIcon style={{ fontSize: '2em', color: 'black' }} />
         </IconButton>
       </div>
       <div className={classes.menuItems}>
