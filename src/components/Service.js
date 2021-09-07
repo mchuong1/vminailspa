@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 const Service = (props) => {
 
   const classes = useStyles();
-  const { name, description, price, duration } = props;
+  const { name, description, price } = props;
 
   return (
     <div className={classes.root}>
@@ -39,12 +39,10 @@ Service.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
   price: PropTypes.string.isRequired,
-  duration: PropTypes.string,
 }
 
 Service.defaultProps = {
   description: '',
-  duration: '',
 }
 
 export default Service;
