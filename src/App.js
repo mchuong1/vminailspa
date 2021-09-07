@@ -5,6 +5,7 @@ import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LandingPage from './pages/LandingPage';
+import About from './pages/About';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <ScrollToTop />
         <Navbar />
         <Route exact path="/" component={LandingPage} />
+        <Route path="/about" component={About} />
       </Switch>
       <Footer />      
     </div>
