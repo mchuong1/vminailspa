@@ -1,17 +1,18 @@
 export const manicure = [
   {
     name: 'Basic',
-    description: '',
+    description:
+      'Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.',
     price: 19,
   },
   {
     name: 'V and Mi - Deluxe Manicure',
-    description: '',
+    description: 'An extension of our Basic Manicure. This includes your choice of an exfoliating sugar scrub (lavender, green tea, or citrus) that removes dead skin and paraffin to soften your arms. Followed by hot towel service with an extended arm and hand massage.',
     price: 37,
   },
   {
     name: 'Gel Manicure',
-    description: '',
+    description: 'A hybrid product that applies like polish but wears like gel, no chips, last longer than regular nail polish, and best of all have no need for drying time! Provides a strong natural nail protection with a shiny finish. ',
     price: 33,
   },
 ];
@@ -19,25 +20,25 @@ export const manicure = [
 export const pedicure = [
   {
     name: 'Basic',
-    description: '',
+    description: 'Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.',
     price: 30,
     time: '25 minutes',
   },
   {
     name: 'V and Mi - Deluxe Pedicure',
-    description: '',
+    description: 'An extension of our Basic Pedicure. This includes your choice of an exfoliating sugar scrub (lavender, green tea, and callus remover) that removes dead skin and paraffin to soften your arms. Followed by hot towel service with an extended foot and leg massage.',
     price: 40,
     time: '35 minutes',
   },
   {
     name: 'Organic Pedicure',
-    description: '',
+    description: 'An extension of our basic pedicure. This includes a callus treatment for your feet in your choice of an exfoliating sugar scrub (kavender, lemon, or mandrin) that removes dead skin.',
     price: 47,
     time: '40 minutes',
   },
   {
     name: 'Jelly Spa Pedicure',
-    description: '',
+    description: 'Jelly pedi is an unique spa pedicure treatment, that incorporates jelly into an ordinary pedicure treatment for the ultimate luxurious pedicure experience. Jelly holds water temperature 4 times longer than water, ideal for spa. 10 minutes foot soak with Jelly, followed our Deluxe pedicure. (Speical neck wrap relaxation)',
     price: 60,
     time: '50 minutes',
   },
@@ -148,70 +149,70 @@ export const additionalServices = [
   },
   {
     name: 'Cut Down',
-    price: 3
-  }
+    price: 3,
+  },
 ];
 
 export const waxing = [
   {
-    title: 'Eyebrows',
+    name: 'Eyebrows',
     price: 12,
   },
 
   {
-    title: 'Upper Lip',
+    name: 'Upper Lip',
     price: 8,
   },
   {
-    title: 'Chin',
+    name: 'Chin',
     price: '10 & Up',
   },
   {
-    title: 'Nose',
+    name: 'Nose',
     price: 12,
   },
   {
-    title: 'Ears',
+    name: 'Ears',
     price: 15,
   },
   {
-    title: 'SideBurns',
+    name: 'SideBurns',
     price: '15 & Up',
   },
   {
-    title: 'Full Face',
+    name: 'Full Face',
     price: '50 & Up',
   },
   {
-    title: 'Half Arms',
+    name: 'Half Arms',
     price: '25 & Up',
   },
   {
-    title: 'Full Arms',
+    name: 'Full Arms',
     price: '40 & Up',
   },
   {
-    title: 'Under Arms',
+    name: 'Under Arms',
     price: '22 & Up',
   },
   {
-    title: 'Bikini',
+    name: 'Bikini',
     price: '30 & Up',
   },
   {
-    title: 'Brazilian',
+    name: 'Brazilian',
     price: '50 & Up',
   },
   {
-    title: 'Half Legs',
+    name: 'Half Legs',
     price: '35 & Up',
   },
   {
-    title: 'Full Legs',
+    name: 'Full Legs',
     price: '55 & Up',
   },
   {
-    title: 'Back',
+    name: 'Back',
     price: '40 & Up',
   },
 ];
@@ -219,20 +220,20 @@ export const waxing = [
 export const addOnServices = [
   {
     name: 'Paraffin Treament - Hands',
-    price: 8
+    price: 8,
   },
   {
     name: 'Paraffin Treament - Feet',
-    price: 10
+    price: 10,
   },
   {
     name: 'Gel Polish Change - Hands',
-    price: 25
+    price: 25,
   },
   {
     name: 'Gel Polish Change - Feet',
-    price: 30
-  }
+    price: 30,
+  },
 ];
 
 export const dippingPowder = [
@@ -250,10 +251,10 @@ export const dippingPowder = [
   },
   {
     name: 'Add Almond/Coffin/Stiletto shape',
-    price: 3
+    price: 3,
   },
   {
     name: 'Add with Tip',
-    price: 5
-  }
-]
+    price: 5,
+  },
+];
