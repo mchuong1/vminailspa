@@ -173,8 +173,8 @@ const Navbar = (props) => {
         <h2 onClick={() => handleNavClick('/Booking')} aria-hidden='true'>
           Online Booking
         </h2>
-        <h2 onClick={() => handleNavClick('/VirtualTour')} aria-hidden='true'>
-          Virtual Tour
+        <h2 onClick={() => handleNavClick('/Gallery')} aria-hidden='true'>
+          Gallery
         </h2>
       </div>
     </div>
@@ -199,7 +199,7 @@ const Navbar = (props) => {
                 <span onClick={() => handleMenuClick('/About')} aria-hidden="true">About</span>
                 <span onClick={() => handleMenuClick('/Service')} aria-hidden="true">Services</span>
                 <span onClick={() => handleMenuClick('/Booking')} aria-hidden="true">Online Booking</span>
-                <span onClick={() => handleMenuClick('/VirtualTour')} aria-hidden="true">Virtual Tour</span>
+                <span onClick={() => handleMenuClick('/Gallery')} aria-hidden="true">Gallery</span>
               </div>)
             : (
               <IconButton

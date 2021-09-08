@@ -8,48 +8,49 @@ const cld = new Cloudinary({
 
 export const photos = [
   {
-    src: cld.image('VNMiNailSpa/ShopView'),
+    // src: cld.image('VNMiNailSpa/ShopView'),
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/ShopView.jpg',
+    width: 2,
+    height: 1,
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/Pedicure_Chairs.jpg',
+    width: 2,
+    height: 1,
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/Reception.jpg',
+    width: 2,
+    height: 1,
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/Polish_Station.jpg',
+    width: 2,
+    height: 1,
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/Pedicure_Station.jpg',
+    width: 2,
+    height: 1,
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531742/VNMiNailSpa/Front.jpg',
     width: 1,
     height: 1,
   },
   {
-    src: cld.image('VNMiNailSpa/Pedicure_Chairs'),
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531742/VNMiNailSpa/Nail_Table.jpg',
     width: 1,
     height: 1,
   },
   {
-    src: cld.image('VNMiNailSpa/Reception'),
-    width: 1,
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531742/VNMiNailSpa/Bar_View.jpg',
+    width: 2,
     height: 1,
   },
   {
-    src: cld.image('VNMiNailSpa/Polish_Station'),
-    width: 1,
-    height: 1,
-  },
-  {
-    src: cld.image('VNMiNailSpa/Pedicure_Station'),
-    width: 1,
-    height: 1,
-  },
-  {
-    src: cld.image('VNMiNailSpa/Front'),
-    width: 1,
-    height: 1,
-  },
-  {
-    src: cld.image('VNMiNailSpa/Nail_Table'),
-    width: 1,
-    height: 1,
-  },
-  {
-    src: cld.image('VNMiNailSpa/Bar_View'),
-    width: 1,
-    height: 1,
-  },
-  {
-    src: cld.image('VNMiNailSpa/Bar'),
-    width: 1,
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531741/VNMiNailSpa/Bar.jpg',
+    width: 2,
     height: 1,
   },
 ];

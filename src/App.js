@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage';
 import About from './pages/About';
 import Services from './pages/Services';
 import OnlineBooking from './pages/OnlineBooking';
+import PhotoGallery from './pages/Gallery';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path='/service' component={Services} />
         <Route path='/booking' component={OnlineBooking} />
+        <Route path='/gallery' component={PhotoGallery} />
       </Switch>
       <Footer />      
     </div>
