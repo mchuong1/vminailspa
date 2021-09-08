@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import LandingPage from './pages/LandingPage';
 import About from './pages/About';
 import Services from './pages/Services';
+import OnlineBooking from './pages/OnlineBooking';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <Route path="/about" component={About} />
         <Route path='/service' component={Services} />
+        <Route path='/booking' component={OnlineBooking} />
       </Switch>
       <Footer />      
     </div>
