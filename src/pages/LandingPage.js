@@ -290,7 +290,6 @@ const LandingPage = (props) => {
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s
           </p>
-          <p>API KEY is {process.env.REACT_APP_SENDGRID_API_KEY}</p>
           <Button
             variant='contained'
             classes={{ root: classes.button }}
