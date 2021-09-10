@@ -27,6 +27,9 @@ module.exports.handler = async (event) => {
         body: error,
       };
     });
+
+  console.log(`Email Successfully Sent!`)
+
   return {
     statusCode: 200,
     headers: {
