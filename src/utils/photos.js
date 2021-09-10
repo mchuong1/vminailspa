@@ -61,3 +61,4 @@ export const manicure = cld.image('VNMiNailSpa/Manicure');
 export const pedicure = cld.image('VNMiNailSpa/Pedicure');
 export const massage = cld.image('VNMiNailSpa/Massage');
 export const nailBottles = cld.image('VNMiNailSpa/Nail_Bottles');
+export const logo = cld.image('VNMINailSpa/MiLogo');

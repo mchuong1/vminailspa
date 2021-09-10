@@ -7,18 +7,12 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
-import { Cloudinary } from '@cloudinary/base';
 import { AdvancedImage } from '@cloudinary/react';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
-const cld = new Cloudinary({
-  cloud: {
-    cloudName: 'dgpijcm0x',
-  },
-});
+import { logo } from '../utils/photos';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -123,7 +117,6 @@ const Navbar = (props) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const [open, setOpen] = useState(true);
-  const logo = cld.image('VNMINailSpa/Logo');
 
   const handleMenu = (prev) => {
     const nav = document.getElementById('navMenu');
@@ -155,7 +148,7 @@ const Navbar = (props) => {
       className={`${classes.navMenu}`}
     >
       <div className={classes.iconRow}>
-        <AdvancedImage cldImg={logo} style={{ maxHeight: '50px' }} alt="Tipsy Logo"/>
+        <AdvancedImage cldImg={logo} style={{ maxHeight: '100px' }} alt="Tipsy Logo"/>
         <IconButton edge='start' onClick={handleClick}>
           <ChevronLeftIcon style={{ fontSize: '2em', color: 'black' }} />
         </IconButton>
@@ -187,7 +180,7 @@ const Navbar = (props) => {
       <AppBar classes={{ root: classes.appBar }} position='sticky'>
         <Toolbar classes={{ root: classes.toolBar }}>
           <AdvancedImage
-            style={{ width: '100px', cursor: 'pointer' }}
+            style={{ height: '50px', cursor: 'pointer' }}
             cldImg={logo}
             onClick={() => history.push('/')}
             alt="VNMi Logo"
