@@ -4,7 +4,7 @@
 const sgMail = require('@sendgrid/mail')
 
 module.exports.handler = async (event,) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+  sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY)
   const {name, message, email} = JSON.parse(event.body)
   const msg = {
     to: 'vminailspa@gmail.com', // Change to your recipient
