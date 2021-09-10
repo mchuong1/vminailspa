@@ -182,6 +182,34 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5px',
       top: '53vh',
     },
+    [theme.breakpoints.up('sm')]: {
+      '& h1': {
+        fontSize: '100px',
+        margin: 0,
+        left: '5vw'
+      },
+      '& p': {
+        fontSize: '32px',
+        top: '24vh',
+        width: '505px',
+        left: '5vw'
+      },
+      '& button': {
+        top: '63vh',
+        left: '5vw'
+      }
+    }
+  },
+  nailBottles: {
+    width: '120%',
+    position: 'absolute',
+    bottom: '22vh',
+    left: '23vw',
+    [theme.breakpoints.up('sm')]: {
+      width: '50%',
+      bottom: '-9vh',
+      left: '45vw'
+    }
   },
   carousel: {
     height: '72%',
@@ -208,15 +236,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
-  nailBottles: {
-    width: '120%',
-    position: 'absolute',
-    bottom: '22vh',
-    left: '23vw',
-    [theme.breakpoints.up('sm')]: {
-      width: '50%',
-    }
-  }
 }));
 
 const LandingPage = () => {
