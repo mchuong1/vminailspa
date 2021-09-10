@@ -8,7 +8,6 @@ const cld = new Cloudinary({
 
 export const photos = [
   {
-    // src: cld.image('VNMiNailSpa/ShopView'),
     src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/ShopView.jpg',
     width: 2,
     height: 1,
@@ -54,6 +53,18 @@ export const photos = [
     height: 1,
   },
 ];
+
+export const carousel = [
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/ShopView.jpg',
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/Reception.jpg',
+  },
+  {
+    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531742/VNMiNailSpa/Bar_View.jpg',
+  }
+]
 
 export const smileGirl = cld.image('VNMiNailSpa/SmileGirl');
 export const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl');
