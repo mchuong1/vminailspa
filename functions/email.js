@@ -11,6 +11,9 @@ module.exports.handler = async (event) => {
     subject: `Get in Touch: ${name}`,
     text: `${message} - Reply back to ${email}`,
   };
+
+  console.log(`Attempting to send Email: ${name} ${email} ${message}`);
+
   sgMail
     .send(msg)
     .then(() => {
