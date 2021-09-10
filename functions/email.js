@@ -1,10 +1,9 @@
 // using Twilio SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs
 const sgMail = require('@sendgrid/mail');
-const env = require('react-dotenv');
 
 module.exports.handler = async (event) => {
-  sgMail.setApiKey(env.REACT_APP_SENDGRID_API_KEY);
+  sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
   const { name, message, email } = JSON.parse(event.body);
   const msg = {
     to: 'vminailspa@gmail.com', // Change to your recipient
