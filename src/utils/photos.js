@@ -56,13 +56,13 @@ export const photos = [
 
 export const carousel = [
   {
-    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/ShopView.jpg',
+    src: cld.image('VNMiNailSpa/ShopView'),
   },
   {
-    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531745/VNMiNailSpa/Reception.jpg',
+    src: cld.image('VNMiNailSpa/Reception'),
   },
   {
-    src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1630531742/VNMiNailSpa/Bar_View.jpg',
+    src: cld.image('VNMiNailSpa/Bar_View'),
   }
 ]
 

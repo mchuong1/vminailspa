@@ -8,17 +8,16 @@ import {
   manicure,
   pedicure,
   massage,
-  smileGirl,
   coverEyesGirl,
   nailBottles,
-  // photos,
+  carousel,
 } from '../utils/photos';
 import { testimonial } from '../utils/testimonial';
 import Contact from '../components/Contact';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
-    backgroundColor: '#F8F6F7',
+    backgroundColor: 'black',
     zIndex: -1,
     position: 'relative',
     height: '93vh',
@@ -30,27 +29,45 @@ const useStyles = makeStyles((theme) => ({
     top: '7vh',
     '& h1': {
       fontSize: '53px',
+      color: 'white',
+    },
+    '& p': {
+      color: 'white',
     },
     [theme.breakpoints.up('sm')]: {
       width: '639px',
       left: '8vw',
       '& h1': {
         fontSize: '100px',
-        margin: 0
+        margin: 0,
       },
       '& p': {
         fontSize: '32px',
-      }
-    }
+      },
+    },
+  },
+  landingCarousel: {
+    zIndex: -1,
+    '& CarouselItem': {
+      height: '93vh',
+    },
+  },
+  carouselImg: {
+    width: '100vh',
+    height: '100vh',
+    opacity: '0.6',
+    [theme.breakpoints.up('sm')]: {
+      width: '100%',
+    },
   },
   smileGirl: {
-    width: '180%', 
-    position: 'absolute', 
+    width: '180%',
+    position: 'absolute',
     bottom: 0,
     [theme.breakpoints.up('sm')]: {
       right: '-11vw',
-      width: '60%'
-    }
+      width: '60%',
+    },
   },
   circle: {
     borderRadius: '50%',
@@ -62,8 +79,8 @@ const useStyles = makeStyles((theme) => ({
     right: '-36vw',
     position: 'absolute',
     [theme.breakpoints.up('sm')]: {
-      right: '7vw'
-    }
+      right: '7vw',
+    },
   },
   button: {
     backgroundColor: '#FB9475',
@@ -94,18 +111,18 @@ const useStyles = makeStyles((theme) => ({
       '& h1': {
         fontSize: '100px',
         right: '18vw',
-        margin: 0
+        margin: 0,
       },
       '& p': {
         fontSize: '32px',
         width: '505px',
-        right: '3vw'
+        right: '3vw',
       },
       '& button': {
         top: '57vh',
-        right: ' 30vw'
-      }
-    }
+        right: ' 30vw',
+      },
+    },
   },
   coverEyesGirl: {
     width: '130%',
@@ -115,8 +132,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '50%',
       left: '12vw',
-      top: '11vh'
-    }
+      top: '11vh',
+    },
   },
   rectangle: {
     backgroundColor: '#F8F6F7',
@@ -128,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       height: '50%',
       width: '80%',
-    }
+    },
   },
   services: {
     height: 'fit-content',
@@ -138,10 +155,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '53px',
     },
     [theme.breakpoints.up('sm')]: {
-      '& button' : {
-        marginLeft: '35px'
-      }
-    }
+      '& button': {
+        marginLeft: '35px',
+      },
+    },
   },
   servicesContainer: {
     [theme.breakpoints.up('sm')]: {
@@ -149,7 +166,7 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'row',
       marginBottom: '20px',
       justifyContent: 'space-evenly',
-    }
+    },
   },
   serviceCard: {
     '& h1': {
@@ -161,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('sm')]: {
       width: '30%',
-    }
+    },
   },
   WhyChooseUs: {
     position: 'relative',
@@ -186,19 +203,19 @@ const useStyles = makeStyles((theme) => ({
       '& h1': {
         fontSize: '100px',
         margin: 0,
-        left: '5vw'
+        left: '5vw',
       },
       '& p': {
         fontSize: '32px',
         top: '24vh',
         width: '505px',
-        left: '5vw'
+        left: '5vw',
       },
       '& button': {
         top: '63vh',
-        left: '5vw'
-      }
-    }
+        left: '5vw',
+      },
+    },
   },
   nailBottles: {
     width: '120%',
@@ -208,8 +225,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '50%',
       bottom: '-9vh',
-      left: '45vw'
-    }
+      left: '45vw',
+    },
   },
   carousel: {
     height: '72%',
@@ -272,12 +289,16 @@ const LandingPage = () => {
             Book Now
           </Button>
         </div>
-        <AdvancedImage
-          cldImg={smileGirl}
-          className={classes.smileGirl}
-          alt='Beautiful Girl Smile Brunette Nails'
-        />
-        <div className={classes.circle} />
+        <Carousel
+          classes={{ root: classes.landingCarousel }}
+          animation='slide'
+          timeout={800}
+          indicators={false}
+        >
+          {carousel.map((image) => (
+            <AdvancedImage cldImg={image.src} className={classes.carouselImg} />
+          ))}
+        </Carousel>
       </div>
       <div className={classes.aboutSection}>
         <h1>About Us</h1>
@@ -292,25 +313,25 @@ const LandingPage = () => {
           cldImg={coverEyesGirl}
           className={classes.coverEyesGirl}
         />
-        <div className={classes.rectangle} style={{right: 0}}/>
+        <div className={classes.rectangle} style={{ right: 0 }} />
       </div>
       <div className={classes.services}>
         <h1>Our Services</h1>
         <div className={classes.servicesContainer}>
-        <ServiceCard
-          title='Manicure'
-          description={serviceDescription}
-          image={manicure}
+          <ServiceCard
+            title='Manicure'
+            description={serviceDescription}
+            image={manicure}
           />
-        <ServiceCard
-          title='Pedicure'
-          description={serviceDescription}
-          image={pedicure}
+          <ServiceCard
+            title='Pedicure'
+            description={serviceDescription}
+            image={pedicure}
           />
-        <ServiceCard
-          title='Massage'
-          description={serviceDescription}
-          image={massage}
+          <ServiceCard
+            title='Massage'
+            description={serviceDescription}
+            image={massage}
           />
         </div>
         <Button variant='contained' classes={{ root: classes.button }}>
@@ -327,22 +348,19 @@ const LandingPage = () => {
         <Button variant='contained' classes={{ root: classes.button }}>
           View More
         </Button>
-        <AdvancedImage
-          cldImg={nailBottles}
-          className={classes.nailBottles}
-        />
+        <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
         <div className={classes.rectangle} />
       </div>
       <div className={classes.testimonial}>
         <h1>Testimonial</h1>
-          <Carousel>
+        <Carousel>
           {testimonial.map((item, i) => (
-            <Paper classes={{root: classes.container}}  key={i}>
+            <Paper classes={{ root: classes.container }} key={i}>
               <p>{item.message}</p>
               <h2>{item.name}</h2>
             </Paper>
           ))}
-          </Carousel>
+        </Carousel>
       </div>
       <Contact />
     </div>
