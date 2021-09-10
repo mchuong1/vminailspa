@@ -16,7 +16,7 @@ import {
 import { testimonial } from '../utils/testimonial';
 import Contact from '../components/Contact';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   landingSection: {
     backgroundColor: '#F8F6F7',
     zIndex: -1,
@@ -31,6 +31,26 @@ const useStyles = makeStyles(() => ({
     '& h1': {
       fontSize: '53px',
     },
+    [theme.breakpoints.up('sm')]: {
+      width: '639px',
+      left: '8vw',
+      '& h1': {
+        fontSize: '100px',
+        margin: 0
+      },
+      '& p': {
+        fontSize: '32px',
+      }
+    }
+  },
+  smileGirl: {
+    width: '180%', 
+    position: 'absolute', 
+    bottom: 0,
+    [theme.breakpoints.up('sm')]: {
+      right: '-11vw',
+      width: '60%'
+    }
   },
   circle: {
     borderRadius: '50%',
@@ -41,6 +61,9 @@ const useStyles = makeStyles(() => ({
     top: '4vh',
     right: '-36vw',
     position: 'absolute',
+    [theme.breakpoints.up('sm')]: {
+      right: '7vw'
+    }
   },
   button: {
     backgroundColor: '#FB9475',
@@ -66,6 +89,34 @@ const useStyles = makeStyles(() => ({
       marginLeft: '5px',
       top: '46vh',
     },
+    [theme.breakpoints.up('sm')]: {
+      height: '100vh',
+      '& h1': {
+        fontSize: '100px',
+        right: '18vw',
+        margin: 0
+      },
+      '& p': {
+        fontSize: '32px',
+        width: '505px',
+        right: '3vw'
+      },
+      '& button': {
+        top: '57vh',
+        right: ' 30vw'
+      }
+    }
+  },
+  coverEyesGirl: {
+    width: '130%',
+    right: '-20vh',
+    bottom: '31vh',
+    position: 'absolute',
+    [theme.breakpoints.up('sm')]: {
+      width: '50%',
+      left: '12vw',
+      top: '11vh'
+    }
   },
   rectangle: {
     backgroundColor: '#F8F6F7',
@@ -74,6 +125,10 @@ const useStyles = makeStyles(() => ({
     position: 'absolute',
     top: '25vh',
     zIndex: -1,
+    [theme.breakpoints.up('sm')]: {
+      height: '50%',
+      width: '80%',
+    }
   },
   services: {
     height: 'fit-content',
@@ -82,6 +137,19 @@ const useStyles = makeStyles(() => ({
     '& h1': {
       fontSize: '53px',
     },
+    [theme.breakpoints.up('sm')]: {
+      '& button' : {
+        marginLeft: '35px'
+      }
+    }
+  },
+  servicesContainer: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex',
+      flexDirection: 'row',
+      marginBottom: '20px',
+      justifyContent: 'space-evenly',
+    }
   },
   serviceCard: {
     '& h1': {
@@ -91,6 +159,9 @@ const useStyles = makeStyles(() => ({
     '& p': {
       padding: '20px',
     },
+    [theme.breakpoints.up('sm')]: {
+      width: '30%',
+    }
   },
   WhyChooseUs: {
     position: 'relative',
@@ -137,6 +208,15 @@ const useStyles = makeStyles(() => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
+  nailBottles: {
+    width: '120%',
+    position: 'absolute',
+    bottom: '22vh',
+    left: '23vw',
+    [theme.breakpoints.up('sm')]: {
+      width: '50%',
+    }
+  }
 }));
 
 const LandingPage = () => {
@@ -175,7 +255,7 @@ const LandingPage = () => {
         </div>
         <AdvancedImage
           cldImg={smileGirl}
-          style={{ width: '180%', position: 'absolute', bottom: 0, left: 0 }}
+          className={classes.smileGirl}
           alt='Beautiful Girl Smile Brunette Nails'
         />
         <div className={classes.circle} />
@@ -191,32 +271,29 @@ const LandingPage = () => {
         </Button>
         <AdvancedImage
           cldImg={coverEyesGirl}
-          style={{
-            width: '130%',
-            right: '-20vh',
-            bottom: '31vh',
-            position: 'absolute',
-          }}
+          className={classes.coverEyesGirl}
         />
-        <div className={classes.rectangle} />
+        <div className={classes.rectangle} style={{right: 0}}/>
       </div>
       <div className={classes.services}>
         <h1>Our Services</h1>
+        <div className={classes.servicesContainer}>
         <ServiceCard
           title='Manicure'
           description={serviceDescription}
           image={manicure}
-        />
+          />
         <ServiceCard
           title='Pedicure'
           description={serviceDescription}
           image={pedicure}
-        />
+          />
         <ServiceCard
           title='Massage'
           description={serviceDescription}
           image={massage}
-        />
+          />
+        </div>
         <Button variant='contained' classes={{ root: classes.button }}>
           View More
         </Button>
@@ -233,12 +310,7 @@ const LandingPage = () => {
         </Button>
         <AdvancedImage
           cldImg={nailBottles}
-          style={{
-            width: '120%',
-            position: 'absolute',
-            bottom: '22vh',
-            left: '23vw',
-          }}
+          className={classes.nailBottles}
         />
         <div className={classes.rectangle} />
       </div>
