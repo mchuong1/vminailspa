@@ -67,10 +67,5 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "netlify-cli": "^3.37.17",
     "prettier": "^2.3.2"
-  },
-  "react-dotenv": {
-    "whitelist": [
-      "REACT_APP_SENDGRID_API_KEY"
-    ]
   }
 }
