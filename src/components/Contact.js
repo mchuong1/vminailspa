@@ -155,7 +155,7 @@ const Contact = () => {
         open={open}
         autoHideDuration={10000}
         onClose={handleClose}
-        message={!hasError ? "Email Sent Successfully!" : "Something went wrong :( Please contact Tipsy Nailbar Boca Raton."}
+        message={!hasError ? "Email Sent Successfully!" : "Something went wrong :( Please contact V&Mi Nail Spa."}
         action={
           <>
             <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
