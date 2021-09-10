@@ -17,8 +17,8 @@ module.exports.handler = async (event) => {
 
   sgMail
     .send(msg)
-    .then(() => {
-      console.log('Email sent');
+    .then((response) => {
+      console.log('Email sent', response);
     })
     .catch((error) => {
       console.error(error);
