@@ -13,6 +13,7 @@ module.exports.handler = async (event) => {
   };
 
   console.log(`Attempting to send Email: ${name} ${email} ${message}`);
+  console.log(`API Key is ${process.env.REACT_APP_SENDGRID_API_KEY}`)
 
   sgMail
     .send(msg)
