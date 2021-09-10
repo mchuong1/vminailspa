@@ -18,7 +18,7 @@ import Contact from '../components/Contact';
 const useStyles = makeStyles((theme) => ({
   landingSection: {
     backgroundColor: 'black',
-    zIndex: -1,
+    zIndex: 1,
     position: 'relative',
     height: '93vh',
     overflow: 'hidden',
@@ -255,9 +255,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LandingPage = () => {
+const LandingPage = (props) => {
   const classes = useStyles();
-  // const { history } = props;
+  const { history } = props;
 
   const serviceDescription = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
 
@@ -275,6 +275,11 @@ const LandingPage = () => {
     image: PropTypes.shape({}).isRequired,
   };
 
+  const goToBooking = () => {
+    const bookUrl = 'https://www.rewanow.com/scheduler/6147101790568448';
+    window.open(bookUrl, '_blank').focus();
+  };
+
   return (
     <div id='landingpage'>
       <div className={classes.landingSection}>
@@ -285,7 +290,11 @@ const LandingPage = () => {
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s
           </p>
-          <Button variant='contained' classes={{ root: classes.button }}>
+          <Button
+            variant='contained'
+            classes={{ root: classes.button }}
+            onClick={goToBooking}
+          >
             Book Now
           </Button>
         </div>
@@ -295,8 +304,8 @@ const LandingPage = () => {
           timeout={800}
           indicators={false}
         >
-          {carousel.map((image) => (
-            <AdvancedImage cldImg={image.src} className={classes.carouselImg} />
+          {carousel.map((image, i) => (
+            <AdvancedImage key={i} cldImg={image.src} className={classes.carouselImg} />
           ))}
         </Carousel>
       </div>
@@ -306,7 +315,11 @@ const LandingPage = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <Button variant='contained' classes={{ root: classes.button }}>
+        <Button
+          variant='contained'
+          classes={{ root: classes.button }}
+          onClick={() => history.push('/About')}
+        >
           Read More
         </Button>
         <AdvancedImage
@@ -334,7 +347,11 @@ const LandingPage = () => {
             image={massage}
           />
         </div>
-        <Button variant='contained' classes={{ root: classes.button }}>
+        <Button
+          variant='contained'
+          classes={{ root: classes.button }}
+          onClick={() => history.push('/Service')}
+        >
           View More
         </Button>
       </div>
@@ -345,7 +362,11 @@ const LandingPage = () => {
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s
         </p>
-        <Button variant='contained' classes={{ root: classes.button }}>
+        <Button
+          variant='contained'
+          classes={{ root: classes.button }}
+          onClick={() => history.push('/About')}
+        >
           View More
         </Button>
         <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
