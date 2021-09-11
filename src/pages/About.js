@@ -11,8 +11,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#F8F6F7',
     position: 'relative',
     height: '110vh',
-    display: 'flex',
-    flexDirection: 'column',
     '& h1': {
       fontSize: '53px',
     },
@@ -94,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
     left: '-19vw',
     [theme.breakpoints.up('sm')]: {
       width: '50%',
-      bottom: '-9vh',
+      bottom: '14vh',
       left: '45vw',
     },
   },
