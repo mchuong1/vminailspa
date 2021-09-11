@@ -118,8 +118,8 @@ export const carousel = [
 
 export const smileGirl = cld.image('VNMiNailSpa/SmileGirl');
 export const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl');
-export const manicure = cld.image('VNMiNailSpa/Manicure');
-export const pedicure = cld.image('VNMiNailSpa/Pedicure');
-export const massage = cld.image('VNMiNailSpa/Massage');
+export const manicure = cld.image('VNMiNailSpa/Nail_Tables_2');
+export const pedicure = cld.image('VNMiNailSpa/Pedicure_01');
+export const massage = cld.image('VNMiNailSpa/Pedicure_Station');
 export const nailBottles = cld.image('VNMiNailSpa/Nail_Bottles');
 export const logo = cld.image('VNMINailSpa/MiLogo');

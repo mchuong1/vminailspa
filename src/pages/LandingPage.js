@@ -13,8 +13,8 @@ import {
   nailBottles,
   carousel,
 } from '../utils/photos';
-import { testimonial } from '../utils/testimonial';
 import Contact from '../components/Contact';
+import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
@@ -118,9 +118,10 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '32px',
         width: '505px',
         right: '3vw',
+        top: '20vh',
       },
       '& button': {
-        top: '57vh',
+        top: '65vh',
         right: ' 30vw',
       },
     },
@@ -224,9 +225,9 @@ const useStyles = makeStyles((theme) => ({
     bottom: '22vh',
     left: '23vw',
     [theme.breakpoints.up('sm')]: {
-      width: '50%',
-      bottom: '-9vh',
-      left: '45vw',
+      width: '40%',
+      bottom: '0vh',
+      left: '54vw',
     },
   },
   carousel: {
@@ -260,7 +261,9 @@ const LandingPage = (props) => {
   const classes = useStyles();
   const { history } = props;
 
-  const serviceDescription = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
+  const manicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
+  const pedicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
+  const serviceDescription = `Jelly pedi is an unique spa pedicure treatment, that incorporates jelly into an ordinary pedicure treatment for the ultimate luxurious pedicure experience. Jelly holds water temperature 4 times longer than water, ideal for spa. 10 minutes foot soak with Jelly, followed our Deluxe pedicure. (Speical neck wrap relaxation)`;
 
   const ServiceCard = ({ title, description, image }) => (
     <Paper classes={{ root: classes.serviceCard }}>
@@ -326,8 +329,9 @@ const LandingPage = (props) => {
         </Fade>
         <Fade right delay={1000}>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+            We take customer satisfaction as our pride. We try our level best to
+            make the customer experience simply the best. We make sure every
+            single product we use is of great quality.
           </p>
           <Button
             variant='contained'
@@ -351,16 +355,16 @@ const LandingPage = (props) => {
           <div className={classes.servicesContainer}>
             <ServiceCard
               title='Manicure'
-              description={serviceDescription}
+              description={manicureDescription}
               image={manicure}
             />
             <ServiceCard
               title='Pedicure'
-              description={serviceDescription}
+              description={pedicureDescription}
               image={pedicure}
             />
             <ServiceCard
-              title='Massage'
+              title='Jelly Spa Pedicure'
               description={serviceDescription}
               image={massage}
             />
@@ -379,9 +383,9 @@ const LandingPage = (props) => {
       <div className={classes.WhyChooseUs}>
         <h1>Why Choose Us?</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s
+          What can we create for you, how can improve or maintain you current
+          look? We always learning something fresh and new while keeping with
+          today&apos;s trends.
         </p>
         <Button
           variant='contained'
@@ -393,17 +397,7 @@ const LandingPage = (props) => {
         <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
         <div className={classes.rectangle} />
       </div>
-      <div className={classes.testimonial}>
-        <h1>Testimonial</h1>
-        <Carousel>
-          {testimonial.map((item, i) => (
-            <Paper classes={{ root: classes.container }} key={i}>
-              <p>{item.message}</p>
-              <h2>{item.name}</h2>
-            </Paper>
-          ))}
-        </Carousel>
-      </div>
+      <Testimonials />
       <Contact />
     </div>
   );

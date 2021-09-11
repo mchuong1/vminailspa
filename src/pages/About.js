@@ -1,10 +1,9 @@
 import React from 'react';
-import { makeStyles, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
-import Carousel from 'react-material-ui-carousel';
 import { coverEyesGirl, nailBottles } from '../utils/photos';
-import { testimonial } from '../utils/testimonial';
 import Contact from '../components/Contact';
+import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   aboutPage: {
@@ -20,15 +19,15 @@ const useStyles = makeStyles((theme) => ({
       '& h1': {
         fontSize: '100px',
         margin: 0,
-        fontWeight: 400
+        fontWeight: 400,
       },
       '& p': {
         fontSize: '32px',
         position: 'absolute',
         right: 0,
-        width: '1000px'
-      }
-    }
+        width: '1000px',
+      },
+    },
   },
   coverEyesGirl: {
     width: '135%',
@@ -37,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
     left: '-19vw',
     [theme.breakpoints.up('sm')]: {
       width: '50%',
-      left: '-9vw'
-    }
+      left: '-9vw',
+    },
   },
   rectangle: {
     backgroundColor: '#F8F6F7',
@@ -50,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       height: '50%',
       width: '80%',
-      top: '26vh'
-    }
+      top: '26vh',
+    },
   },
   WhyChooseUs: {
     position: 'relative',
-    height: '93vh',
+    height: '100vh',
     '& h1': {
       position: 'absolute',
       fontSize: '53px',
@@ -76,15 +75,15 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '100px',
         margin: 0,
         left: '5vw',
-        fontWeight: 400
+        fontWeight: 400,
       },
       '& p': {
-        fontSize: '32px',
+        fontSize: '24px',
         top: '24vh',
         width: '505px',
-        left: '5vw'
+        left: '5vw',
       },
-    }
+    },
   },
   nailBottles: {
     width: '135%',
@@ -94,8 +93,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '50%',
       bottom: '-9vh',
-      left: '45vw'
-    }
+      left: '45vw',
+    },
   },
   testimonial: {
     padding: '20px',
@@ -112,10 +111,7 @@ const useStyles = makeStyles((theme) => ({
 
 const About = () => {
   const classes = useStyles();
-  const aboutMessage = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
+  const aboutMessage = `We take customer satisfaction as our pride. We try our level best to make the customer experience simply the best. We make sure every single product we use is of great quality. We take great care of our salon's hygiene. All of our staff is highly trained and quite experienced too. All our services come with a 5-day guarantee. A clean, warm and friendly place is welcoming you.`;
 
   return (
     <div id='aboutpage'>
@@ -130,27 +126,17 @@ const About = () => {
       <div className={classes.WhyChooseUs}>
         <h1>Why Choose Us?</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s
+          What can we create for you, how can improve or maintain you current
+          look? We always learning something fresh and new while keeping with
+          today&apos;s trends. We taking the trends of today and making it
+          uniquely yours. We may take a lot of time to create your look, but
+          that is so you don&apos;t have to spend a lot of time to maintain the
+          new you.
         </p>
-        <AdvancedImage
-          cldImg={nailBottles}
-          className={classes.nailBottles}
-        />
+        <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
         <div className={classes.rectangle} />
       </div>
-      <div className={classes.testimonial}>
-        <h1>Testimonial</h1>
-        <Carousel>
-          {testimonial.map((item, i) => (
-            <Paper classes={{ root: classes.container }} key={i}>
-              <p>{item.message}</p>
-              <h2>{item.name}</h2>
-            </Paper>
-          ))}
-        </Carousel>
-      </div>
+      <Testimonials />
       <Contact />
     </div>
   );
