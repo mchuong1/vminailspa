@@ -289,7 +289,7 @@ const LandingPage = (props) => {
   };
 
   return (
-    <div id='landingpage'>
+    <div id='landingpage' style={{overflow: 'hidden'}}>
       <div className={classes.landingSection}>
         <div className={classes.landingMessage}>
           <Fade bottom>

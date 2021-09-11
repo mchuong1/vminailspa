@@ -10,7 +10,9 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
     position: 'relative',
-    height: '78vh',
+    height: '110vh',
+    display: 'flex',
+    flexDirection: 'column',
     '& h1': {
       fontSize: '53px',
     },
@@ -44,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     height: '40%',
     width: '100%',
     position: 'absolute',
-    top: '50vh',
+    top: '65vh',
     zIndex: -1,
     [theme.breakpoints.up('sm')]: {
       height: '50%',
@@ -54,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   WhyChooseUs: {
     position: 'relative',
-    height: '100vh',
+    height: '125vh',
     '& h1': {
       position: 'absolute',
       fontSize: '53px',
@@ -114,7 +116,7 @@ const About = () => {
   const aboutMessage = `We take customer satisfaction as our pride. We try our level best to make the customer experience simply the best. We make sure every single product we use is of great quality. We take great care of our salon's hygiene. All of our staff is highly trained and quite experienced too. All our services come with a 5-day guarantee. A clean, warm and friendly place is welcoming you.`;
 
   return (
-    <div id='aboutpage'>
+    <div id='aboutpage' style={{overflow: 'hidden'}}>
       <div className={classes.aboutPage}>
         <h1>About Us</h1>
         <p>{aboutMessage}</p>
