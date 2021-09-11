@@ -374,7 +374,7 @@ const LandingPage = (props) => {
               />
             </div>
           </Fade>
-          <Fade bottom delay={1000}>
+          <Fade bottom delay={500}>
             <Button
               variant='contained'
               classes={{ root: classes.button }}
