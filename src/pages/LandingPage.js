@@ -100,14 +100,14 @@ const useStyles = makeStyles((theme) => ({
     },
     '& p': {
       position: 'absolute',
-      top: '28vh',
+      top: '25vh',
       padding: '20px',
       width: '190px',
     },
     '& button': {
       position: 'absolute',
       marginLeft: '5px',
-      top: '46vh',
+      top: '55vh',
     },
     [theme.breakpoints.up('sm')]: {
       height: '100vh',

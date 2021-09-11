@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
     position: 'relative',
-    height: '72vh',
+    height: '78vh',
     '& h1': {
       fontSize: '53px',
     },
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     height: '40%',
     width: '100%',
     position: 'absolute',
-    top: '45vh',
+    top: '50vh',
     zIndex: -1,
     [theme.breakpoints.up('sm')]: {
       height: '50%',
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   nailBottles: {
     width: '135%',
     position: 'absolute',
-    bottom: '0',
+    bottom: '-3vh',
     left: '-19vw',
     [theme.breakpoints.up('sm')]: {
       width: '50%',
