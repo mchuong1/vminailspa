@@ -4,6 +4,7 @@ import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import Carousel from 'react-material-ui-carousel';
+import { Fade } from 'react-reveal';
 import {
   manicure,
   pedicure,
@@ -284,19 +285,25 @@ const LandingPage = (props) => {
     <div id='landingpage'>
       <div className={classes.landingSection}>
         <div className={classes.landingMessage}>
-          <h1>Lorem Ipsum</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s
-          </p>
-          <Button
-            variant='contained'
-            classes={{ root: classes.button }}
-            onClick={goToBooking}
-          >
-            Book Now
-          </Button>
+          <Fade bottom>
+            <h1>Lorem Ipsum</h1>
+          </Fade>
+          <Fade bottom delay={500}>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industrys standard dummy text
+              ever since the 1500s
+            </p>
+          </Fade>
+          <Fade bottom delay={1000}>
+            <Button
+              variant='contained'
+              classes={{ root: classes.button }}
+              onClick={goToBooking}
+            >
+              Book Now
+            </Button>
+          </Fade>
         </div>
         <Carousel
           classes={{ root: classes.landingCarousel }}
@@ -305,55 +312,69 @@ const LandingPage = (props) => {
           indicators={false}
         >
           {carousel.map((image, i) => (
-            <AdvancedImage key={i} cldImg={image.src} className={classes.carouselImg} />
+            <AdvancedImage
+              key={i}
+              cldImg={image.src}
+              className={classes.carouselImg}
+            />
           ))}
         </Carousel>
       </div>
       <div className={classes.aboutSection}>
-        <h1>About Us</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
-        <Button
-          variant='contained'
-          classes={{ root: classes.button }}
-          onClick={() => history.push('/About')}
-        >
-          Read More
-        </Button>
-        <AdvancedImage
-          cldImg={coverEyesGirl}
-          className={classes.coverEyesGirl}
-        />
-        <div className={classes.rectangle} style={{ right: 0 }} />
+        <Fade top>
+          <h1>About Us</h1>
+        </Fade>
+        <Fade right delay={1000}>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+          <Button
+            variant='contained'
+            classes={{ root: classes.button }}
+            onClick={() => history.push('/About')}
+          >
+            Read More
+          </Button>
+          <AdvancedImage
+            cldImg={coverEyesGirl}
+            className={classes.coverEyesGirl}
+          />
+          <div className={classes.rectangle} style={{ right: 0 }} />
+        </Fade>
       </div>
       <div className={classes.services}>
-        <h1>Our Services</h1>
-        <div className={classes.servicesContainer}>
-          <ServiceCard
-            title='Manicure'
-            description={serviceDescription}
-            image={manicure}
-          />
-          <ServiceCard
-            title='Pedicure'
-            description={serviceDescription}
-            image={pedicure}
-          />
-          <ServiceCard
-            title='Massage'
-            description={serviceDescription}
-            image={massage}
-          />
-        </div>
-        <Button
-          variant='contained'
-          classes={{ root: classes.button }}
-          onClick={() => history.push('/Service')}
-        >
-          View More
-        </Button>
+        <Fade top>
+          <h1>Our Services</h1>
+        </Fade>
+        <Fade bottom delay={500}>
+          <div className={classes.servicesContainer}>
+            <ServiceCard
+              title='Manicure'
+              description={serviceDescription}
+              image={manicure}
+            />
+            <ServiceCard
+              title='Pedicure'
+              description={serviceDescription}
+              image={pedicure}
+            />
+            <ServiceCard
+              title='Massage'
+              description={serviceDescription}
+              image={massage}
+            />
+          </div>
+        </Fade>
+        <Fade bottom delay={1000}>
+          <Button
+            variant='contained'
+            classes={{ root: classes.button }}
+            onClick={() => history.push('/Service')}
+          >
+            View More
+          </Button>
+        </Fade>
       </div>
       <div className={classes.WhyChooseUs}>
         <h1>Why Choose Us?</h1>
