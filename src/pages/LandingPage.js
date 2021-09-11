@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     '& h1': {
       fontSize: '53px',
       color: 'white',
+      fontWeight: 400,
     },
     '& p': {
       color: 'white',
@@ -95,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
       position: 'absolute',
       fontSize: '53px',
       paddingLeft: '20px',
+      fontWeight: 400,
     },
     '& p': {
       position: 'absolute',
@@ -155,6 +157,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#F8F6F7',
     '& h1': {
       fontSize: '53px',
+      fontWeight: 400,
     },
     [theme.breakpoints.up('sm')]: {
       '& button': {
@@ -189,6 +192,7 @@ const useStyles = makeStyles((theme) => ({
       position: 'absolute',
       fontSize: '53px',
       paddingLeft: '20px',
+      fontWeight: 400,
     },
     '& p': {
       position: 'absolute',
@@ -289,13 +293,11 @@ const LandingPage = (props) => {
       <div className={classes.landingSection}>
         <div className={classes.landingMessage}>
           <Fade bottom>
-            <h1>Lorem Ipsum</h1>
+            <h1>Welcome</h1>
           </Fade>
           <Fade bottom delay={500}>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s
+              We are a spa salon that specializes in nail art, pedicure, and more.
             </p>
           </Fade>
           <Fade bottom delay={1000}>
