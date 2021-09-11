@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     position: 'absolute',
     bottom: 0,
+    left: 0
   },
   wave: {
     // position: 'absolute',
@@ -60,7 +61,7 @@ const Services = () => {
   const classes = useStyles();
 
   // to make the number of waves in the background
-  const arr = [1, 1, 1, 1, 1, 1, 1];
+  const arr = [1, 1, 1, 1, 1, 1, 1, 1, 1];
   const waves = arr.map(() => (
     <div className={classes.wave}>
       <svg
