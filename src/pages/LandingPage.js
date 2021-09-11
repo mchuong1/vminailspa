@@ -289,118 +289,121 @@ const LandingPage = (props) => {
   };
 
   return (
-    <div id='landingpage' style={{overflow: 'hidden'}}>
-      <div className={classes.landingSection}>
-        <div className={classes.landingMessage}>
-          <Fade bottom>
-            <h1>Welcome</h1>
+    <div id='landingpage'>
+      <div style={{overflow: 'hidden'}}>
+        <div className={classes.landingSection}>
+          <div className={classes.landingMessage}>
+            <Fade bottom>
+              <h1>Welcome</h1>
+            </Fade>
+            <Fade bottom delay={500}>
+              <p>
+                We are a spa salon that specializes in nail art, pedicure, and
+                more.
+              </p>
+            </Fade>
+            <Fade bottom delay={1000}>
+              <Button
+                variant='contained'
+                classes={{ root: classes.button }}
+                onClick={goToBooking}
+              >
+                Book Now
+              </Button>
+            </Fade>
+          </div>
+          <Carousel
+            classes={{ root: classes.landingCarousel }}
+            animation='slide'
+            timeout={800}
+            indicators={false}
+          >
+            {carousel.map((image, i) => (
+              <AdvancedImage
+                key={i}
+                cldImg={image.src}
+                className={classes.carouselImg}
+              />
+            ))}
+          </Carousel>
+        </div>
+        <div className={classes.aboutSection}>
+          <Fade top>
+            <h1>About Us</h1>
+          </Fade>
+          <Fade right delay={1000}>
+            <p>
+              We take customer satisfaction as our pride. We try our level best
+              to make the customer experience simply the best. We make sure
+              every single product we use is of great quality.
+            </p>
+            <Button
+              variant='contained'
+              classes={{ root: classes.button }}
+              onClick={() => history.push('/About')}
+            >
+              Read More
+            </Button>
+            <AdvancedImage
+              cldImg={coverEyesGirl}
+              className={classes.coverEyesGirl}
+            />
+            <div className={classes.rectangle} style={{ right: 0 }} />
+          </Fade>
+        </div>
+        <div className={classes.services}>
+          <Fade top>
+            <h1>Our Services</h1>
           </Fade>
           <Fade bottom delay={500}>
-            <p>
-              We are a spa salon that specializes in nail art, pedicure, and more.
-            </p>
+            <div className={classes.servicesContainer}>
+              <ServiceCard
+                title='Manicure'
+                description={manicureDescription}
+                image={manicure}
+              />
+              <ServiceCard
+                title='Pedicure'
+                description={pedicureDescription}
+                image={pedicure}
+              />
+              <ServiceCard
+                title='Jelly Spa Pedicure'
+                description={serviceDescription}
+                image={massage}
+              />
+            </div>
           </Fade>
           <Fade bottom delay={1000}>
             <Button
               variant='contained'
               classes={{ root: classes.button }}
-              onClick={goToBooking}
+              onClick={() => history.push('/Service')}
             >
-              Book Now
+              View More
             </Button>
           </Fade>
         </div>
-        <Carousel
-          classes={{ root: classes.landingCarousel }}
-          animation='slide'
-          timeout={800}
-          indicators={false}
-        >
-          {carousel.map((image, i) => (
-            <AdvancedImage
-              key={i}
-              cldImg={image.src}
-              className={classes.carouselImg}
-            />
-          ))}
-        </Carousel>
-      </div>
-      <div className={classes.aboutSection}>
-        <Fade top>
-          <h1>About Us</h1>
-        </Fade>
-        <Fade right delay={1000}>
+        <div className={classes.WhyChooseUs}>
+          <h1>Why Choose Us?</h1>
           <p>
-            We take customer satisfaction as our pride. We try our level best to
-            make the customer experience simply the best. We make sure every
-            single product we use is of great quality.
+            What can we create for you, how can improve or maintain you current
+            look? We always learning something fresh and new while keeping with
+            today&apos;s trends.
           </p>
           <Button
             variant='contained'
             classes={{ root: classes.button }}
             onClick={() => history.push('/About')}
           >
-            Read More
-          </Button>
-          <AdvancedImage
-            cldImg={coverEyesGirl}
-            className={classes.coverEyesGirl}
-          />
-          <div className={classes.rectangle} style={{ right: 0 }} />
-        </Fade>
-      </div>
-      <div className={classes.services}>
-        <Fade top>
-          <h1>Our Services</h1>
-        </Fade>
-        <Fade bottom delay={500}>
-          <div className={classes.servicesContainer}>
-            <ServiceCard
-              title='Manicure'
-              description={manicureDescription}
-              image={manicure}
-            />
-            <ServiceCard
-              title='Pedicure'
-              description={pedicureDescription}
-              image={pedicure}
-            />
-            <ServiceCard
-              title='Jelly Spa Pedicure'
-              description={serviceDescription}
-              image={massage}
-            />
-          </div>
-        </Fade>
-        <Fade bottom delay={1000}>
-          <Button
-            variant='contained'
-            classes={{ root: classes.button }}
-            onClick={() => history.push('/Service')}
-          >
             View More
           </Button>
-        </Fade>
+          <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
+          <div className={classes.rectangle} />
+        </div>
+        <Testimonials />
       </div>
-      <div className={classes.WhyChooseUs}>
-        <h1>Why Choose Us?</h1>
-        <p>
-          What can we create for you, how can improve or maintain you current
-          look? We always learning something fresh and new while keeping with
-          today&apos;s trends.
-        </p>
-        <Button
-          variant='contained'
-          classes={{ root: classes.button }}
-          onClick={() => history.push('/About')}
-        >
-          View More
-        </Button>
-        <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
-        <div className={classes.rectangle} />
-      </div>
-      <Testimonials />
-      <Contact />
+        <Contact />
     </div>
   );
 };
