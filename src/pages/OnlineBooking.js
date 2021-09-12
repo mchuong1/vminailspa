@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
+import { Paper, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -9,15 +9,17 @@ const useStyles = makeStyles({
     position: 'relative',
   },
   container: {
-    position: 'absolute',
-    top: '15vh',
-    left: 0,
-    width: '100%',
+    // position: 'absolute',
+    // top: '15vh',
+    // left: 0,
+    // width: '100%',
     height: '100%',
     textAlign: 'center',
     // eslint-disable-next-line no-dupe-keys
     textAlign: '-webkit-center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    // overflow: 'hidden',
+    padding: '0px 10px'
   },
   button: {
     marginTop: '20px',
@@ -25,6 +27,11 @@ const useStyles = makeStyles({
     color: 'white',
     borderRadius: '50px',
   },
+  iframe: {
+    width: '80%',
+    height: '100%',
+    border: 'none',
+  }
 });
 
 const OnlineBooking = () => {
@@ -32,13 +39,15 @@ const OnlineBooking = () => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.container}>
-        <h1>Book A Treatment</h1>
-        <div>View a list of our treatments and book</div>
-        <Button variant='contained' classes={{ root: classes.button }}>
-          Book Now
-        </Button>
-      </div>
+      <h1>Book A Treatment</h1>
+      <Paper classes={{root: classes.container}}>
+        <iframe
+          id='onlineBookingFrame'
+          title='Online Booking Frame'
+          src='https://www.rewanow.com/scheduler/6147101790568448'
+          className={classes.iframe}
+        />
+      </Paper>
     </div>
   );
 };

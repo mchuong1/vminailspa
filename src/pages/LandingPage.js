@@ -306,7 +306,7 @@ const LandingPage = (props) => {
               <Button
                 variant='contained'
                 classes={{ root: classes.button }}
-                onClick={goToBooking}
+                onClick={() => history.push('/Booking')}
               >
                 Book Now
               </Button>
