@@ -283,11 +283,6 @@ const LandingPage = (props) => {
     image: PropTypes.shape({}).isRequired,
   };
 
-  const goToBooking = () => {
-    const bookUrl = 'https://www.rewanow.com/scheduler/6147101790568448';
-    window.open(bookUrl, '_blank').focus();
-  };
-
   return (
     <div id='landingpage'>
       <div style={{overflow: 'hidden'}}>
