@@ -295,7 +295,7 @@ const LandingPage = (props) => {
           <iframe
             id='virtualTourFrame'
             title='Virtual Tour Frame'
-            src='http://vnmispa.com'
+            src='https://vnmispa.com'
             className={classes.iframe}
           />
           {/* <div className={classes.landingMessage}>
