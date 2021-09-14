@@ -3,7 +3,7 @@ import { makeStyles, Button, Paper } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import Carousel from 'react-material-ui-carousel';
+// import Carousel from 'react-material-ui-carousel';
 import { Fade } from 'react-reveal';
 import {
   manicure,
@@ -11,7 +11,7 @@ import {
   massage,
   coverEyesGirl,
   nailBottles,
-  carousel,
+  // carousel,
 } from '../utils/photos';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonial';
@@ -259,6 +259,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
+  iframe: {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+  },
 }));
 
 const LandingPage = (props) => {
@@ -285,9 +290,15 @@ const LandingPage = (props) => {
 
   return (
     <div id='landingpage'>
-      <div style={{overflow: 'hidden'}}>
+      <div style={{ overflow: 'hidden' }}>
         <div className={classes.landingSection}>
-          <div className={classes.landingMessage}>
+          <iframe
+            id='virtualTourFrame'
+            title='Virtual Tour Frame'
+            src='https://vnmispa.com'
+            className={classes.iframe}
+          />
+          {/* <div className={classes.landingMessage}>
             <Fade bottom>
               <h1>Welcome</h1>
             </Fade>
@@ -306,8 +317,8 @@ const LandingPage = (props) => {
                 Book Now
               </Button>
             </Fade>
-          </div>
-          <Carousel
+          </div> */}
+          {/* <Carousel
             classes={{ root: classes.landingCarousel }}
             animation='slide'
             timeout={800}
@@ -320,7 +331,7 @@ const LandingPage = (props) => {
                 className={classes.carouselImg}
               />
             ))}
-          </Carousel>
+          </Carousel> */}
         </div>
         <div className={classes.aboutSection}>
           <Fade top>
@@ -398,7 +409,7 @@ const LandingPage = (props) => {
         </div>
         <Testimonials />
       </div>
-        <Contact />
+      <Contact />
     </div>
   );
 };
