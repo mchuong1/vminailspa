@@ -52,6 +52,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     bottom: 0,
     height: '10% !important',
+  },
+  quotes: {
+    fontSize: '24px',
+    maxWidth: '600px',
+    alignSelf: 'center',
   }
 }));
 
@@ -67,9 +72,9 @@ const Testimonials = () => {
         <Carousel classes={{root: classes.carousel, indicators: classes.indicator}}>
           {testimonial.map((item, i) => (
             <div key={i} className={classes.carouselItem}>
-              <p>
+              <q className={classes.quotes}>
                 {item.message}
-              </p>
+              </q>
               <h2>
                 {item.name}
               </h2>

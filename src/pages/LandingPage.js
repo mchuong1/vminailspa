@@ -140,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   rectangle: {
-    backgroundColor: '#AED6F1',
+    backgroundColor: '#F8F6F7',
     height: '40%',
     width: '100%',
     position: 'absolute',
@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
   services: {
     height: 'fit-content',
     padding: '20px',
-    backgroundColor: '#AED6F1',
+    backgroundColor: '#F8F6F7',
     '& h1': {
       fontSize: '53px',
       fontWeight: 400,
