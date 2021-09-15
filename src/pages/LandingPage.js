@@ -3,7 +3,6 @@ import { makeStyles, Button, Paper } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-// import Carousel from 'react-material-ui-carousel';
 import { Fade } from 'react-reveal';
 import {
   manicure,
@@ -11,14 +10,14 @@ import {
   massage,
   coverEyesGirl,
   nailBottles,
-  // carousel,
+  smileGirl,
 } from '../utils/photos';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
-    backgroundColor: 'black',
+    backgroundColor: '#F8F6F7',
     zIndex: 1,
     position: 'relative',
     height: '93vh',
@@ -30,11 +29,7 @@ const useStyles = makeStyles((theme) => ({
     top: '7vh',
     '& h1': {
       fontSize: '53px',
-      color: 'white',
       fontWeight: 400,
-    },
-    '& p': {
-      color: 'white',
     },
     [theme.breakpoints.up('sm')]: {
       width: '639px',
@@ -259,18 +254,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
-  iframeContainer: {
-    height: '100%',
-    paddingTop: '75%',
-    position: 'relative',
-  },
-  iframe: {
-    width: '100%',
-    height: '100%',
-    border: 'none',
-    position: 'absolute',
-    top: 0,
-  },
 }));
 
 const LandingPage = (props) => {
@@ -279,11 +262,11 @@ const LandingPage = (props) => {
 
   const manicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
   const pedicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
-  const serviceDescription = `Jelly pedi is an unique spa pedicure treatment, that incorporates jelly into an ordinary pedicure treatment for the ultimate luxurious pedicure experience. Jelly holds water temperature 4 times longer than water, ideal for spa. 10 minutes foot soak with Jelly, followed our Deluxe pedicure. (Speical neck wrap relaxation)`;
+  const serviceDescription = `Waxing is always a part of the beauty industry that helps in obtaining and maintaining flawless skin. It is the removal of unwanted hair semi-permanently, and can be done on any outer part of the body, including the face. Apart from making the skin good-looking and smooth, waxing also helps in exfoliating the skin and effectively removing the layer of dead skin that accumulates over time.`;
 
-  const ServiceCard = ({ title, description, image }) => (
+  const ServiceCard = ({ title, description, image, inlineStyle }) => (
     <Paper classes={{ root: classes.serviceCard }}>
-      <AdvancedImage cldImg={image} style={{ width: '100%' }} />
+      <AdvancedImage cldImg={image} style={{ width: '100%', ...inlineStyle }} />
       <h1>{title}</h1>
       <p>{description}</p>
     </Paper>
@@ -293,22 +276,18 @@ const LandingPage = (props) => {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.shape({}).isRequired,
+    inlineStyle: PropTypes.shape({}),
+  };
+
+  ServiceCard.defaultProps = {
+    inlineStyle: {},
   };
 
   return (
     <div id='landingpage'>
       <div style={{ overflow: 'hidden' }}>
         <div className={classes.landingSection}>
-          <div className={classes.iframeContainer}>
-          <iframe
-            id='virtualTourFrame'
-            title='Virtual Tour Frame'
-            src='https://vnmispa.com'
-            className={classes.iframe}
-            allowFullScreen
-            />
-          </div>
-          {/* <div className={classes.landingMessage}>
+          <div className={classes.landingMessage}>
             <Fade bottom>
               <h1>Welcome</h1>
             </Fade>
@@ -328,20 +307,8 @@ const LandingPage = (props) => {
               </Button>
             </Fade>
           </div>
-          <Carousel
-            classes={{ root: classes.landingCarousel }}
-            animation='slide'
-            timeout={800}
-            indicators={false}
-          >
-            {carousel.map((image, i) => (
-              <AdvancedImage
-                key={i}
-                cldImg={image.src}
-                className={classes.carouselImg}
-              />
-            ))}
-          </Carousel> */}
+          <AdvancedImage cldImg={smileGirl} className={classes.smileGirl} />
+          <div className={classes.circle} />
         </div>
         <div className={classes.aboutSection}>
           <Fade top>
@@ -382,9 +349,10 @@ const LandingPage = (props) => {
                 title='Pedicure'
                 description={pedicureDescription}
                 image={pedicure}
+                inlineStyle={{ height: '49%' }}
               />
               <ServiceCard
-                title='Jelly Spa Pedicure'
+                title='Waxing'
                 description={serviceDescription}
                 image={massage}
               />
