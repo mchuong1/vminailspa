@@ -1,34 +1,47 @@
+const formData = require('form-data');
+const Mailgun = require('mailgun.js');
 
-// using Twilio SendGrid's v3 Node.js Library
-// https://github.com/sendgrid/sendgrid-nodejs
-const sgMail = require('@sendgrid/mail')
+const sendEmail = async (event) => {
+  const { name, message, email } = JSON.parse(event.body);
+  const DOMAIN = 'vnminailspa.com';
 
-module.exports.handler = async (event,) => {
-  sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY)
-  const {name, message, email} = JSON.parse(event.body)
-  const msg = {
-    to: 'vminailspa@gmail.com', // Change to your recipient
-    from: 'support@vnminailspa.com', // Change to your verified sender
-    subject: `Get in Touch: ${name}`,
-    text: `${message} - Reply back to ${email}`
-  }
-  sgMail
-    .send(msg)
-    .then(() => {
-      console.log('Email sent')
+  const mailgun = new Mailgun(formData);
+  const mg = mailgun.client({
+    username: 'api',
+    key: process.env.REACT_APP_MAILGUN_API_KEY,
+  });
+
+  const data = {
+    from: 'V&Mi Nail Spa <support@vnminailspa.com>',
+    to: 'business.mchuong@gmail.com',
+    subject: `Get In Touch with ${name}`,
+    text: `${message} reply back to ${email}`,
+  };
+
+  console.log('About to send email with data', data);
+
+  const result = await mg.messages
+    .create(DOMAIN, {
+      from: 'V&Mi Nail Spa <support@vnminailspa.com>',
+      to: 'vminailspa@gmail.com',
+      subject: `Get In Touch with ${name}`,
+      text: `${message} 
+      
+      
+      reply back to ${email}`,
     })
-    .catch((error) => {
-      console.error(error)
-      return {
-        status: 500,
-        body: error
-      }
-    })
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: 'Email sent'
-    }
-}
+    .then((msg) => msg)
+    .catch((err) => err);
+
+  console.log(result);
+
+  return result;
+};
+
+module.exports.handler = async (event) => {
+  const result = await sendEmail(event);
+  return {
+    statusCode: result.status || 200,
+    body: JSON.stringify(result),
+  };
+};

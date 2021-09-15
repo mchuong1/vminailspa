@@ -59,6 +59,24 @@ export const photos = [
   }
 ];
 
+export const carousel = [
+  {
+    src: cld.image('VNMiNailSpa/Receiption_01'),
+  },
+  {
+    src: cld.image('VNMiNailSpa/Nail_Tables'),
+  },
+  {
+    src: cld.image('VNMiNailSpa/Front_bar'),
+  },
+  {
+    src: cld.image('VNMiNailSpa/Bar_view_2'),
+  },
+  {
+    src: cld.image('VNMiNailSpa/Bar_view_'),
+  },
+]
+
 export const smileGirl = cld.image('VNMiNailSpa/SmileGirl');
 export const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl');
 export const manicure = cld.image('VNMiNailSpa/Manicure');
