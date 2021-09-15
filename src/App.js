@@ -9,6 +9,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import OnlineBooking from './pages/OnlineBooking';
 import PhotoGallery from './pages/Gallery';
+import VirtualTour from './pages/VirtualTour';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/service' component={Services} />
         <Route path='/booking' component={OnlineBooking} />
         <Route path='/gallery' component={PhotoGallery} />
+        <Route path='/virtualtour' component={VirtualTour} />
       </Switch>
       <Footer />      
     </div>

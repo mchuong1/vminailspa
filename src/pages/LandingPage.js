@@ -3,7 +3,6 @@ import { makeStyles, Button, Paper } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-// import Carousel from 'react-material-ui-carousel';
 import { Fade } from 'react-reveal';
 import {
   manicure,
@@ -11,17 +10,17 @@ import {
   massage,
   coverEyesGirl,
   nailBottles,
-  // carousel,
+  smileGirl,
 } from '../utils/photos';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
-    backgroundColor: 'black',
+    backgroundColor: '#F8F6F7',
     zIndex: 1,
     position: 'relative',
-    height: '93vh',
+    height: '100vh',
     overflow: 'hidden',
   },
   landingMessage: {
@@ -30,11 +29,7 @@ const useStyles = makeStyles((theme) => ({
     top: '7vh',
     '& h1': {
       fontSize: '53px',
-      color: 'white',
       fontWeight: 400,
-    },
-    '& p': {
-      color: 'white',
     },
     [theme.breakpoints.up('sm')]: {
       width: '639px',
@@ -63,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   smileGirl: {
-    width: '180%',
+    width: '160%',
     position: 'absolute',
     bottom: 0,
     [theme.breakpoints.up('sm')]: {
@@ -259,11 +254,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
-  iframe: {
-    width: '100%',
-    height: '100%',
-    border: 'none',
-  },
 }));
 
 const LandingPage = (props) => {
@@ -272,11 +262,11 @@ const LandingPage = (props) => {
 
   const manicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
   const pedicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
-  const serviceDescription = `Jelly pedi is an unique spa pedicure treatment, that incorporates jelly into an ordinary pedicure treatment for the ultimate luxurious pedicure experience. Jelly holds water temperature 4 times longer than water, ideal for spa. 10 minutes foot soak with Jelly, followed our Deluxe pedicure. (Speical neck wrap relaxation)`;
+  const serviceDescription = `Waxing is always a part of the beauty industry that helps in obtaining and maintaining flawless skin. It is the removal of unwanted hair semi-permanently, and can be done on any outer part of the body, including the face. Apart from making the skin good-looking and smooth, waxing also helps in exfoliating the skin and effectively removing the layer of dead skin that accumulates over time.`;
 
-  const ServiceCard = ({ title, description, image }) => (
+  const ServiceCard = ({ title, description, image, inlineStyle }) => (
     <Paper classes={{ root: classes.serviceCard }}>
-      <AdvancedImage cldImg={image} style={{ width: '100%' }} />
+      <AdvancedImage cldImg={image} style={{ width: '100%', ...inlineStyle }} />
       <h1>{title}</h1>
       <p>{description}</p>
     </Paper>
@@ -286,26 +276,24 @@ const LandingPage = (props) => {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.shape({}).isRequired,
+    inlineStyle: PropTypes.shape({}),
+  };
+
+  ServiceCard.defaultProps = {
+    inlineStyle: {},
   };
 
   return (
     <div id='landingpage'>
       <div style={{ overflow: 'hidden' }}>
         <div className={classes.landingSection}>
-          <iframe
-            id='virtualTourFrame'
-            title='Virtual Tour Frame'
-            src='https://vnmispa.com'
-            className={classes.iframe}
-          />
-          {/* <div className={classes.landingMessage}>
+          <div className={classes.landingMessage}>
             <Fade bottom>
-              <h1>Welcome</h1>
+              <h1>Where Nail Art Begins!</h1>
             </Fade>
             <Fade bottom delay={500}>
               <p>
-                We are a spa salon that specializes in nail art, pedicure, and
-                more.
+                Treat yourself a visit to our salon today!
               </p>
             </Fade>
             <Fade bottom delay={1000}>
@@ -317,21 +305,9 @@ const LandingPage = (props) => {
                 Book Now
               </Button>
             </Fade>
-          </div> */}
-          {/* <Carousel
-            classes={{ root: classes.landingCarousel }}
-            animation='slide'
-            timeout={800}
-            indicators={false}
-          >
-            {carousel.map((image, i) => (
-              <AdvancedImage
-                key={i}
-                cldImg={image.src}
-                className={classes.carouselImg}
-              />
-            ))}
-          </Carousel> */}
+          </div>
+          <AdvancedImage cldImg={smileGirl} className={classes.smileGirl} />
+          <div className={classes.circle} />
         </div>
         <div className={classes.aboutSection}>
           <Fade top>
@@ -350,12 +326,12 @@ const LandingPage = (props) => {
             >
               Read More
             </Button>
-            <AdvancedImage
-              cldImg={coverEyesGirl}
-              className={classes.coverEyesGirl}
-            />
-            <div className={classes.rectangle} style={{ right: 0 }} />
           </Fade>
+          <AdvancedImage
+            cldImg={coverEyesGirl}
+            className={classes.coverEyesGirl}
+          />
+          <div className={classes.rectangle} style={{ right: 0 }} />
         </div>
         <div className={classes.services}>
           <Fade top>
@@ -372,9 +348,10 @@ const LandingPage = (props) => {
                 title='Pedicure'
                 description={pedicureDescription}
                 image={pedicure}
+                inlineStyle={{ height: '49%' }}
               />
               <ServiceCard
-                title='Jelly Spa Pedicure'
+                title='Waxing'
                 description={serviceDescription}
                 image={massage}
               />
@@ -391,19 +368,23 @@ const LandingPage = (props) => {
           </Fade>
         </div>
         <div className={classes.WhyChooseUs}>
-          <h1>Why Choose Us?</h1>
-          <p>
-            What can we create for you, how can improve or maintain you current
-            look? We always learning something fresh and new while keeping with
-            today&apos;s trends.
-          </p>
-          <Button
-            variant='contained'
-            classes={{ root: classes.button }}
-            onClick={() => history.push('/About')}
-          >
-            View More
-          </Button>
+          <Fade top>
+            <h1>Why Choose Us?</h1>
+          </Fade>
+          <Fade left delay={500}>
+            <p>
+              What can we create for you, how can improve or maintain you
+              current look? We always learning something fresh and new while
+              keeping with today&apos;s trends.
+            </p>
+            <Button
+              variant='contained'
+              classes={{ root: classes.button }}
+              onClick={() => history.push('/About')}
+            >
+              View More
+            </Button>
+          </Fade>
           <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
           <div className={classes.rectangle} />
         </div>
