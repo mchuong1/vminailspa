@@ -1,9 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    // padding: '50px'
+    // position: 'relative',
+    [theme.breakpoints.up('sm')]: {
+      padding: '50px',
+      height: '100vh',
+    },
   },
   iframeContainer: {
     height: '100%',
@@ -14,17 +18,26 @@ const useStyles = makeStyles({
     width: '100%',
     height: '100%',
     border: 'none',
+    // position: 'absolute',
+    // top: 0,
+  },
+  absoluteiFrame: {
+    width: '100%',
+    height: '100%',
+    border: 'none',
     position: 'absolute',
     top: 0,
-  },
-});
+  }
+}));
 
 const VirtualTour = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <div className={classes.root}>
-      {/* <div className={classes.iframeContainer}> */}
+      {isDesktop ? (
         <iframe
           id='virtualTourFrame'
           title='Virtual Tour Frame'
@@ -32,7 +45,17 @@ const VirtualTour = () => {
           className={classes.iframe}
           allowFullScreen
         />
-      {/* </div> */}
+      ) : (
+        <div className={classes.iframeContainer}>
+          <iframe
+            id='virtualTourFrame'
+            title='Virtual Tour Frame'
+            src='https://vnmispa.com'
+            className={classes.absoluteiFrame}
+            allowFullScreen
+          />
+        </div>
+      )}
     </div>
   );
 };
