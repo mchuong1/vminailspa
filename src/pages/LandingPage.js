@@ -4,21 +4,21 @@ import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-reveal';
-import Carousel from 'react-material-ui-carousel'
+// import Carousel from 'react-material-ui-carousel'
 import {
   manicure,
   pedicure,
   massage,
   coverEyesGirl,
   nailBottles,
-  carousel,
+  smileGirl,
 } from '../utils/photos';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
-    backgroundColor: 'black',
+    backgroundColor: '#F8F6F7',
     zIndex: 1,
     position: 'relative',
     height: '100vh',
@@ -31,10 +31,6 @@ const useStyles = makeStyles((theme) => ({
     '& h1': {
       fontSize: '53px',
       fontWeight: 400,
-      color: 'white',
-    },
-    '& p': {
-      color: 'white',
     },
     [theme.breakpoints.up('sm')]: {
       width: '639px',
@@ -311,7 +307,7 @@ const LandingPage = (props) => {
               </Button>
             </Fade>
           </div>
-          <Carousel
+          {/* <Carousel
             classes={{ root: classes.landingCarousel }}
             // animation='slide'
             timeout={1000}
@@ -324,9 +320,9 @@ const LandingPage = (props) => {
                 className={classes.carouselImg}
               />
             ))}
-          </Carousel> 
-          {/* <AdvancedImage cldImg={smileGirl} className={classes.smileGirl} />
-          <div className={classes.circle} /> */}
+          </Carousel>  */}
+          <AdvancedImage cldImg={smileGirl} className={classes.smileGirl} />
+          <div className={classes.circle} />
         </div>
         <div className={classes.aboutSection}>
           <Fade top>
