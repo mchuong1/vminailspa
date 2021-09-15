@@ -18,7 +18,7 @@ import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     zIndex: 1,
     position: 'relative',
     height: '93vh',
@@ -292,12 +292,15 @@ const LandingPage = (props) => {
     <div id='landingpage'>
       <div style={{ overflow: 'hidden' }}>
         <div className={classes.landingSection}>
+          <div style={{ paddingTop: '75%' }}>
           <iframe
             id='virtualTourFrame'
             title='Virtual Tour Frame'
             src='https://vnmispa.com'
             className={classes.iframe}
-          />
+            allowFullScreen
+            />
+          </div>
           {/* <div className={classes.landingMessage}>
             <Fade bottom>
               <h1>Welcome</h1>
