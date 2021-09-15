@@ -23,7 +23,7 @@ const sendEmail = async (event) => {
   const result = await mg.messages
     .create(DOMAIN, {
       from: 'V&Mi Nail Spa <support@vnminailspa.com>',
-      to: 'business.mchuong@gmail.com',
+      to: 'vminailspa@gmail.com',
       subject: `Get In Touch with ${name}`,
       text: `${message} reply back to ${email}`,
     })
