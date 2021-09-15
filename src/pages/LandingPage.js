@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#F8F6F7',
     zIndex: 1,
     position: 'relative',
-    height: '93vh',
+    height: '100vh',
     overflow: 'hidden',
   },
   landingMessage: {
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   smileGirl: {
-    width: '180%',
+    width: '160%',
     position: 'absolute',
     bottom: 0,
     [theme.breakpoints.up('sm')]: {
