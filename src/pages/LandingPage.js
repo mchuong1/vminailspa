@@ -327,12 +327,12 @@ const LandingPage = (props) => {
             >
               Read More
             </Button>
-            <AdvancedImage
-              cldImg={coverEyesGirl}
-              className={classes.coverEyesGirl}
-            />
-            <div className={classes.rectangle} style={{ right: 0 }} />
           </Fade>
+          <AdvancedImage
+            cldImg={coverEyesGirl}
+            className={classes.coverEyesGirl}
+          />
+          <div className={classes.rectangle} style={{ right: 0 }} />
         </div>
         <div className={classes.services}>
           <Fade top>
