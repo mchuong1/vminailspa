@@ -18,7 +18,7 @@ import Testimonials from '../components/Testimonial';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
-    // backgroundColor: 'black',
+    backgroundColor: 'black',
     zIndex: 1,
     position: 'relative',
     height: '93vh',
@@ -259,10 +259,17 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
+  iframeContainer: {
+    height: '100%',
+    paddingTop: '75%',
+    position: 'relative',
+  },
   iframe: {
     width: '100%',
     height: '100%',
     border: 'none',
+    position: 'absolute',
+    top: 0,
   },
 }));
 
@@ -292,7 +299,7 @@ const LandingPage = (props) => {
     <div id='landingpage'>
       <div style={{ overflow: 'hidden' }}>
         <div className={classes.landingSection}>
-          <div style={{ paddingTop: '75%' }}>
+          <div className={classes.iframeContainer}>
           <iframe
             id='virtualTourFrame'
             title='Virtual Tour Frame'
@@ -320,8 +327,8 @@ const LandingPage = (props) => {
                 Book Now
               </Button>
             </Fade>
-          </div> */}
-          {/* <Carousel
+          </div>
+          <Carousel
             classes={{ root: classes.landingCarousel }}
             animation='slide'
             timeout={800}
