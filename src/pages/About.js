@@ -60,10 +60,12 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '53px',
       paddingLeft: '20px',
     },
-    '& p': {
+    '& ul': {
       position: 'absolute',
       top: '20vh',
       padding: '20px',
+      marginLeft: '20px',
+      fontSize: '24px',
     },
     '& button': {
       position: 'absolute',
@@ -77,9 +79,9 @@ const useStyles = makeStyles((theme) => ({
         left: '5vw',
         fontWeight: 400,
       },
-      '& p': {
+      '& ul': {
         fontSize: '24px',
-        top: '24vh',
+        top: '36vh',
         width: '505px',
         left: '5vw',
       },
@@ -111,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 
 const About = () => {
   const classes = useStyles();
-  const aboutMessage = `We take customer satisfaction as our pride. We try our level best to make the customer experience simply the best. We make sure every single product we use is of great quality. We take great care of our salon's hygiene. All of our staff is highly trained and quite experienced too. All our services come with a 5-day guarantee. A clean, warm and friendly place is welcoming you.`;
+  const aboutMessage = `We have many years of experience in the nail business and strive to provide the very highest quality of work. We offer an odorless relaxing atmosphere, and cleanliness is a top priority. Implements come in hospital grade sterilized pouches, utensils are used only once for each customer, and pedicure basins are freshly lined for each customer to ensure proper sanitization.`;
 
   return (
     <div id='aboutpage'>
@@ -126,14 +128,12 @@ const About = () => {
       </div>
       <div className={classes.WhyChooseUs}>
         <h1>Why Choose Us?</h1>
-        <p>
-          What can we create for you, how can improve or maintain you current
-          look? We always learning something fresh and new while keeping with
-          today&apos;s trends. We taking the trends of today and making it
-          uniquely yours. We may take a lot of time to create your look, but
-          that is so you don&apos;t have to spend a lot of time to maintain the
-          new you.
-        </p>
+        <ul>
+          <li>Customer Service is our TOP PRIORITY.</li>
+          <li>State of the art Facility</li>
+          <li>Industry Leading Talent and Training</li>
+          <li>Uncompormised Standards</li>
+        </ul>
         <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
         <div className={classes.rectangle} />
       </div>

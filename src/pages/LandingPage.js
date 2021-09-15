@@ -36,11 +36,11 @@ const useStyles = makeStyles((theme) => ({
       width: '639px',
       left: '8vw',
       '& h1': {
-        fontSize: '100px',
+        fontSize: '80px',
         margin: 0,
       },
       '& p': {
-        fontSize: '32px',
+        fontSize: '24px',
       },
     },
   },
@@ -129,6 +129,7 @@ const useStyles = makeStyles((theme) => ({
     right: '-20vh',
     bottom: '31vh',
     position: 'absolute',
+    zIndex: -1,
     [theme.breakpoints.up('sm')]: {
       width: '50%',
       left: '12vw',
@@ -141,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     position: 'absolute',
     top: '25vh',
-    zIndex: -1,
+    zIndex: -2,
     [theme.breakpoints.up('sm')]: {
       height: '50%',
       width: '80%',
@@ -224,6 +225,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     bottom: '22vh',
     left: '23vw',
+    zIndex: -1,
     [theme.breakpoints.up('sm')]: {
       width: '40%',
       bottom: '0vh',
@@ -290,11 +292,13 @@ const LandingPage = (props) => {
         <div className={classes.landingSection}>
           <div className={classes.landingMessage}>
             <Fade bottom>
-              <h1>Where Nail Art Begins!</h1>
+              <h1>Welcome to V&#38;Mi</h1>
             </Fade>
             <Fade bottom delay={500}>
               <p>
-                Treat yourself a visit to our salon today!
+                Come and discover your oasis. It has never been easier to take a
+                break from stress and the harmful factors that surround you
+                every day!
               </p>
             </Fade>
             <Fade bottom delay={1000}>
@@ -330,14 +334,14 @@ const LandingPage = (props) => {
           </Fade>
           <Fade right delay={1000}>
             <p>
-              We take customer satisfaction as our pride. We try our level best
-              to make the customer experience simply the best. We make sure
-              every single product we use is of great quality.
+              We have many years of experience in the nail business and strive
+              to provide the very highest quality of work.
             </p>
             <Button
               variant='contained'
               classes={{ root: classes.button }}
               onClick={() => history.push('/About')}
+              style={{ zIndex: 2}}
             >
               Read More
             </Button>
@@ -363,7 +367,6 @@ const LandingPage = (props) => {
                 title='Pedicure'
                 description={pedicureDescription}
                 image={pedicure}
-                inlineStyle={{ height: '49%' }}
               />
               <ServiceCard
                 title='Waxing'
