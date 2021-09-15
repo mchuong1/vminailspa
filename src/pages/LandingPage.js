@@ -289,12 +289,11 @@ const LandingPage = (props) => {
         <div className={classes.landingSection}>
           <div className={classes.landingMessage}>
             <Fade bottom>
-              <h1>Welcome</h1>
+              <h1>Where Nail Art Begins!</h1>
             </Fade>
             <Fade bottom delay={500}>
               <p>
-                We are a spa salon that specializes in nail art, pedicure, and
-                more.
+                Treat yourself a visit to our salon today!
               </p>
             </Fade>
             <Fade bottom delay={1000}>
