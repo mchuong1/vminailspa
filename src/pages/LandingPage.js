@@ -369,19 +369,23 @@ const LandingPage = (props) => {
           </Fade>
         </div>
         <div className={classes.WhyChooseUs}>
-          <h1>Why Choose Us?</h1>
-          <p>
-            What can we create for you, how can improve or maintain you current
-            look? We always learning something fresh and new while keeping with
-            today&apos;s trends.
-          </p>
-          <Button
-            variant='contained'
-            classes={{ root: classes.button }}
-            onClick={() => history.push('/About')}
-          >
-            View More
-          </Button>
+          <Fade top>
+            <h1>Why Choose Us?</h1>
+          </Fade>
+          <Fade left delay={500}>
+            <p>
+              What can we create for you, how can improve or maintain you
+              current look? We always learning something fresh and new while
+              keeping with today&apos;s trends.
+            </p>
+            <Button
+              variant='contained'
+              classes={{ root: classes.button }}
+              onClick={() => history.push('/About')}
+            >
+              View More
+            </Button>
+          </Fade>
           <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
           <div className={classes.rectangle} />
         </div>
