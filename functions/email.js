@@ -25,7 +25,10 @@ const sendEmail = async (event) => {
       from: 'V&Mi Nail Spa <support@vnminailspa.com>',
       to: 'vminailspa@gmail.com',
       subject: `Get In Touch with ${name}`,
-      text: `${message} reply back to ${email}`,
+      text: `${message} 
+      
+      
+      reply back to ${email}`,
     })
     .then((msg) => msg)
     .catch((err) => err);
