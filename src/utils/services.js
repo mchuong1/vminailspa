@@ -6,7 +6,7 @@ export const manicure = [
     price: 19,
   },
   {
-    name: 'V and Mi - Deluxe Manicure',
+    name: 'V&Mi - Deluxe Manicure',
     description: 'An extension of our Basic Manicure. This includes your choice of an exfoliating sugar scrub (lavender, green tea, or citrus) that removes dead skin and paraffin to soften your arms. Followed by hot towel service with an extended arm and hand massage.',
     price: 37,
   },
@@ -25,7 +25,7 @@ export const pedicure = [
     time: '25 minutes',
   },
   {
-    name: 'V and Mi - Deluxe Pedicure',
+    name: 'V&Mi - Deluxe Pedicure',
     description: 'An extension of our Basic Pedicure. This includes your choice of an exfoliating sugar scrub (lavender, green tea, and callus remover) that removes dead skin and paraffin to soften your arms. Followed by hot towel service with an extended foot and leg massage.',
     price: 40,
     time: '35 minutes',
