@@ -74,11 +74,11 @@ export const nailEnhancement = [
   },
   {
     name: 'Solar Pink & White Full Set',
-    price: 60,
+    price: '60 & up',
   },
   {
     name: 'Solar Pink & White Fill Ins',
-    price: 50,
+    price: '50 & up',
   },
   {
     name: 'Solar Pink Fill Ins Only',
@@ -247,7 +247,7 @@ export const dippingPowder = [
   },
   {
     name: 'Ombre Full Set',
-    price: 50,
+    price: '60 & up',
   },
   {
     name: 'Add Almond/Coffin/Stiletto shape',
