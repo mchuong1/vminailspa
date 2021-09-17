@@ -5,9 +5,7 @@ const cld = new Cloudinary({
     cloudName: 'dgpijcm0x',
   },
 });
-
-const cloudinaryUrl = 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1631376471/VNMiNailSpa';
-
+ 
 export const photos = [
   {
     src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1631376471/VNMiNailSpa/Check_In.jpg',
@@ -81,24 +79,20 @@ export const carousel = [
 
 export const gallery = [
   {
-    src: `${cloudinaryUrl}/Manicure_Full_Service`,
-    height: 1,
-    width: 1,
+    src: cld.image('VNMiNailSpa/Pedicure_Workers_side_01'),
+    description: 'Customer Service is our TOP PRIORITY.',
   },
   {
-    src: `${cloudinaryUrl}/Pedicure_Workers`,
-    height: 1,
-    width: 1,
+    src: cld.image('VNMiNailSpa/Bar_Full_Service_01'),
+    description: 'State of the art Facility',
   },
   {
-    src: `${cloudinaryUrl}/Pedicure_Workers_side`,
-    height: 1,
-    width: 2,
+    src: cld.image('VNMiNailSpa/Pedicure_Workers_01'),
+    description: 'Industry Leading Talent and Training',
   },
   {
-    src: `${cloudinaryUrl}/Bar_Full_Service`,
-    width: 2,
-    height: 1,
+    src: cld.image('VNMiNailSpa/Manicure_Full_Service_01'),
+    description: 'Uncompormised Standards',
   }
 ];
 

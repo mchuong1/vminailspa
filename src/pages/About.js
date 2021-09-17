@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
-import { coverEyesGirl, nailBottles } from '../utils/photos';
+import { coverEyesGirl, gallery } from '../utils/photos';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonial';
+import WhySection from '../components/WhySection';
 
 const useStyles = makeStyles((theme) => ({
   aboutPage: {
@@ -53,12 +54,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   WhyChooseUs: {
-    position: 'relative',
-    height: '125vh',
+    // position: 'relative',
+    // height: '125vh',
     '& h1': {
-      position: 'absolute',
+      // position: 'absolute',
       fontSize: '53px',
       paddingLeft: '20px',
+      marginBottom: 0,
     },
     '& ul': {
       position: 'absolute',
@@ -128,14 +130,9 @@ const About = () => {
       </div>
       <div className={classes.WhyChooseUs}>
         <h1>Why Choose Us?</h1>
-        <ul>
-          <li>Customer Service is our TOP PRIORITY.</li>
-          <li>State of the art Facility</li>
-          <li>Industry Leading Talent and Training</li>
-          <li>Uncompormised Standards</li>
-        </ul>
-        <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
-        <div className={classes.rectangle} />
+        {gallery.map((item, i) => (
+          <WhySection key={i} img={item.src} description={item.description} right={i%2===0}/>
+        ))}
       </div>
       <Testimonials />
       </div>
