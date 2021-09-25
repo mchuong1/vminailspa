@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
     width: '160%',
     position: 'absolute',
     bottom: 0,
+    zIndex: -1,
     [theme.breakpoints.up('sm')]: {
       right: '-11vw',
       width: '60%',
@@ -70,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   circle: {
     borderRadius: '50%',
-    zIndex: '-1',
+    zIndex: '-2',
     backgroundColor: 'white',
     height: '85vh',
     width: '85vh',
