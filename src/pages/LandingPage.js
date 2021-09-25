@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Button, Paper } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
@@ -15,6 +15,7 @@ import {
 } from '../utils/photos';
 import Contact from '../components/Contact';
 import Testimonials from '../components/Testimonial';
+import BookingModal from '../components/BookingModal';
 
 const useStyles = makeStyles((theme) => ({
   landingSection: {
@@ -262,6 +263,11 @@ const useStyles = makeStyles((theme) => ({
 const LandingPage = (props) => {
   const classes = useStyles();
   const { history } = props;
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  }
 
   const manicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
   const pedicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
@@ -305,26 +311,13 @@ const LandingPage = (props) => {
               <Button
                 variant='contained'
                 classes={{ root: classes.button }}
-                onClick={() => history.push('/Booking')}
+                onClick={() => setOpen(true)}
+                style={{ zIndex: 2}}
               >
                 Book Now
               </Button>
             </Fade>
           </div>
-          {/* <Carousel
-            classes={{ root: classes.landingCarousel }}
-            // animation='slide'
-            timeout={1000}
-            indicators={false}
-          >
-            {carousel.map((image, i) => (
-              <AdvancedImage
-                key={i}
-                cldImg={image.src}
-                className={classes.carouselImg}
-              />
-            ))}
-          </Carousel>  */}
           <AdvancedImage cldImg={smileGirl} className={classes.smileGirl} />
           <div className={classes.circle} />
         </div>
@@ -409,6 +402,7 @@ const LandingPage = (props) => {
         <Testimonials />
       </div>
       <Contact />
+      <BookingModal open={open} handleClose={handleClose} />
     </div>
   );
 };

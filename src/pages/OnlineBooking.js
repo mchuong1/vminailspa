@@ -1,5 +1,6 @@
-import React from 'react';
-import { Paper, makeStyles } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Button, makeStyles } from '@material-ui/core';
+import BookingModal from '../components/BookingModal';
 
 const useStyles = makeStyles({
   root: {
@@ -7,6 +8,7 @@ const useStyles = makeStyles({
     padding: '20px',
     backgroundColor: '#F8F6F7',
     position: 'relative',
+    textAlign: 'center',
   },
   container: {
     // position: 'absolute',
@@ -19,7 +21,7 @@ const useStyles = makeStyles({
     textAlign: '-webkit-center',
     justifyContent: 'center',
     // overflow: 'hidden',
-    padding: '0px 10px'
+    padding: '0px 10px',
   },
   button: {
     marginTop: '20px',
@@ -28,26 +30,44 @@ const useStyles = makeStyles({
     borderRadius: '50px',
   },
   iframe: {
-    width: '80%',
+    // width: '80%',
     height: '100%',
     border: 'none',
-  }
+  },
 });
 
 const OnlineBooking = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  }
 
   return (
     <div className={classes.root}>
       <h1>Book A Treatment</h1>
-      <Paper classes={{root: classes.container}}>
+      <p>
+        *** To ensure quality services, online booking appointments will be
+        confirmed via phone by our receptionist. Unconfirmed appointments are
+        subject to cancellation.
+      </p>
+      <Button
+        variant='contained'
+        classes={{ root: classes.button }}
+        onClick={() => setOpen(true)}
+      >
+        Book Now
+      </Button>
+      {/* <Paper classes={{root: classes.container}}>
         <iframe
           id='onlineBookingFrame'
           title='Online Booking Frame'
           src={`https://www.rewanow.com/scheduler/${process.env.REACT_APP_REWANOW_ID}`}
           className={classes.iframe}
         />
-      </Paper>
+      </Paper> */}
+      <BookingModal open={open} handleClose={handleClose} />
     </div>
   );
 };
