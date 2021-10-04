@@ -5,7 +5,8 @@ import { testimonial } from '../utils/testimonial';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'relative'
+    position: 'relative',
+    marginBottom: '3rem'
   },
   parallaxWhiteNailPolish: {
     backgroundImage: `url(https://res.cloudinary.com/dgpijcm0x/image/upload/v1631388896/VNMiNailSpa/nail_stuff.jpg)`,

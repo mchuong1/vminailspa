@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles, Button, Paper } from '@material-ui/core';
+import { makeStyles, Button, Paper, useMediaQuery, useTheme } from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
@@ -259,16 +259,43 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: '#F8F6F7',
   },
+  virtualTourContainer: {
+    [theme.breakpoints.up('sm')]: {
+      padding: '50px',
+      height: '100vh',
+    },
+  },
+  iframeContainer: {
+    height: '100%',
+    paddingTop: '75%',
+    position: 'relative',
+  },
+  absoluteiFrame: {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    position: 'absolute',
+    top: 0,
+  },
+  iframe: {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    // position: 'absolute',
+    // top: 0,
+  },
 }));
 
 const LandingPage = (props) => {
   const classes = useStyles();
   const { history } = props;
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   const manicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
   const pedicureDescription = `Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.`;
@@ -313,7 +340,7 @@ const LandingPage = (props) => {
                 variant='contained'
                 classes={{ root: classes.button }}
                 onClick={() => setOpen(true)}
-                style={{ zIndex: 2}}
+                style={{ zIndex: 2 }}
               >
                 Book Now
               </Button>
@@ -335,7 +362,7 @@ const LandingPage = (props) => {
               variant='contained'
               classes={{ root: classes.button }}
               onClick={() => history.push('/About')}
-              style={{ zIndex: 2}}
+              style={{ zIndex: 2 }}
             >
               Read More
             </Button>
@@ -401,6 +428,27 @@ const LandingPage = (props) => {
           <div className={classes.rectangle} />
         </div>
         <Testimonials />
+      </div>
+      <div className={classes.virtualTourContainer}>
+        {isDesktop ? (
+          <iframe
+            id='virtualTourFrame'
+            title='Virtual Tour Frame'
+            src='https://vnmispa.com'
+            className={classes.iframe}
+            allowFullScreen
+          />
+        ) : (
+          <div className={classes.iframeContainer}>
+            <iframe
+              id='virtualTourFrame'
+              title='Virtual Tour Frame'
+              src='https://vnmispa.com'
+              className={classes.absoluteiFrame}
+              allowFullScreen
+            />
+          </div>
+        )}
       </div>
       <Contact />
       <BookingModal open={open} handleClose={handleClose} />
