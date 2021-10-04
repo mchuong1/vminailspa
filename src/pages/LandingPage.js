@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { makeStyles, Button, Paper, useMediaQuery, useTheme } from '@material-ui/core';
+import {
+  makeStyles,
+  Button,
+  Paper,
+  useMediaQuery,
+  useTheme,
+} from '@material-ui/core';
 import { AdvancedImage } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
@@ -260,9 +266,19 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#F8F6F7',
   },
   virtualTourContainer: {
+    position: 'relative',
+    '& button': {
+      position: 'absolute',
+      bottom: '1rem',
+      left: '1rem',
+    },
     [theme.breakpoints.up('sm')]: {
       padding: '50px',
       height: '100vh',
+      '& button': {
+        bottom: '5rem',
+        left: '6rem',
+      },
     },
   },
   iframeContainer: {
@@ -449,6 +465,13 @@ const LandingPage = (props) => {
             />
           </div>
         )}
+        <Button
+          variant='contained'
+          classes={{ root: classes.button }}
+          onClick={() => setOpen(true)}
+        >
+          Book Now
+        </Button>
       </div>
       <Contact />
       <BookingModal open={open} handleClose={handleClose} />
