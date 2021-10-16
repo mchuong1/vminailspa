@@ -102,17 +102,6 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '20px',
       fontWeight: 400,
     },
-    '& p': {
-      position: 'absolute',
-      top: '25vh',
-      padding: '20px',
-      width: '190px',
-    },
-    '& button': {
-      position: 'absolute',
-      marginLeft: '5px',
-      top: '55vh',
-    },
     [theme.breakpoints.up('sm')]: {
       height: '100vh',
       '& h1': {
@@ -120,17 +109,29 @@ const useStyles = makeStyles((theme) => ({
         right: '18vw',
         margin: 0,
       },
+    },
+  },
+  aboutMessage: {
+    position: 'absolute',
+    top: '15rem',
+    padding: '20px',
+    '& p': {
+      width: '190px',
+      marginBottom: '5rem'
+    },
+    '& button': {
+      position: 'absolute',
+      bottom: 0
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '600px',
+      top: '20rem',
+      right: '12rem',
       '& p': {
         fontSize: '32px',
-        width: '505px',
-        right: '3vw',
-        top: '20vh',
+        width: '600px'
       },
-      '& button': {
-        top: '65vh',
-        right: ' 30vw',
-      },
-    },
+    }
   },
   coverEyesGirl: {
     width: '130%',
@@ -370,18 +371,20 @@ const LandingPage = (props) => {
             <h1>About Us</h1>
           </Fade>
           <Fade right delay={1000}>
-            <p>
-              We have many years of experience in the nail business and strive
-              to provide the very highest quality of work.
-            </p>
-            <Button
-              variant='contained'
-              classes={{ root: classes.button }}
-              onClick={() => history.push('/About')}
-              style={{ zIndex: 2 }}
-            >
-              Read More
-            </Button>
+            <div className={classes.aboutMessage}>
+              <p>
+                We have many years of experience in the nail business and strive
+                to provide the very highest quality of work.
+              </p>
+              <Button
+                variant='contained'
+                classes={{ root: classes.button }}
+                onClick={() => history.push('/About')}
+                style={{ zIndex: 2 }}
+              >
+                Read More
+              </Button>
+            </div>
           </Fade>
           <AdvancedImage
             cldImg={coverEyesGirl}
