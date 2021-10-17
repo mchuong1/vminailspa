@@ -6,7 +6,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
-import { AdvancedImage } from '@cloudinary/react';
+import { AdvancedImage, lazyload, responsive,} from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-reveal';
@@ -142,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '50%',
       left: '12vw',
-      top: '11vh',
+      top: '8rem',
     },
   },
   rectangle: {
@@ -320,7 +320,7 @@ const LandingPage = (props) => {
 
   const ServiceCard = ({ title, description, image, inlineStyle }) => (
     <Paper classes={{ root: classes.serviceCard }}>
-      <AdvancedImage cldImg={image} style={{ width: '100%', ...inlineStyle }} />
+      <AdvancedImage cldImg={image} style={{ width: '100%', ...inlineStyle }}  plugins={[lazyload(), responsive(),]} />
       <h1>{title}</h1>
       <p>{description}</p>
     </Paper>
@@ -407,6 +407,7 @@ const LandingPage = (props) => {
                 title='Pedicure'
                 description={pedicureDescription}
                 image={pedicure}
+                inlineStyle={{height: '59%'}}
               />
               <ServiceCard
                 title='Waxing'
