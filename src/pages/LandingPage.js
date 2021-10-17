@@ -6,7 +6,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
-import { AdvancedImage, lazyload, responsive,} from '@cloudinary/react';
+import { AdvancedImage, lazyload, responsive } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-reveal';
@@ -117,11 +117,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     '& p': {
       width: '190px',
-      marginBottom: '5rem'
+      marginBottom: '5rem',
     },
     '& button': {
       position: 'absolute',
-      bottom: 0
+      bottom: 0,
     },
     [theme.breakpoints.up('sm')]: {
       width: '600px',
@@ -129,9 +129,9 @@ const useStyles = makeStyles((theme) => ({
       right: '12rem',
       '& p': {
         fontSize: '32px',
-        width: '600px'
+        width: '600px',
       },
-    }
+    },
   },
   coverEyesGirl: {
     width: '130%',
@@ -229,6 +229,20 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  WhyChooseUsMessage: {
+    '& p': {
+      padding: '20px',
+      width: '190px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      '& p': {
+        fontSize: '32px',
+        top: '24vh',
+        width: '505px',
+        left: '5vw',
+      },
+    },
+  },
   nailBottles: {
     width: '120%',
     position: 'absolute',
@@ -320,7 +334,11 @@ const LandingPage = (props) => {
 
   const ServiceCard = ({ title, description, image, inlineStyle }) => (
     <Paper classes={{ root: classes.serviceCard }}>
-      <AdvancedImage cldImg={image} style={{ width: '100%', ...inlineStyle }}  plugins={[lazyload(), responsive(),]} />
+      <AdvancedImage
+        cldImg={image}
+        style={{ width: '100%', ...inlineStyle }}
+        plugins={[lazyload(), responsive()]}
+      />
       <h1>{title}</h1>
       <p>{description}</p>
     </Paper>
@@ -407,7 +425,7 @@ const LandingPage = (props) => {
                 title='Pedicure'
                 description={pedicureDescription}
                 image={pedicure}
-                inlineStyle={{height: '59%'}}
+                inlineStyle={{ height: '59%' }}
               />
               <ServiceCard
                 title='Waxing'
@@ -416,7 +434,7 @@ const LandingPage = (props) => {
               />
             </div>
           </Fade>
-          <Fade bottom delay={500}>
+          <Fade bottom>
             <Button
               variant='contained'
               classes={{ root: classes.button }}
@@ -431,18 +449,20 @@ const LandingPage = (props) => {
             <h1>Why Choose Us?</h1>
           </Fade>
           <Fade left delay={500}>
-            <p>
-              What can we create for you, how can improve or maintain you
-              current look? We always learning something fresh and new while
-              keeping with today&apos;s trends.
-            </p>
-            <Button
-              variant='contained'
-              classes={{ root: classes.button }}
-              onClick={() => history.push('/About')}
-            >
-              View More
-            </Button>
+            <div className={classes.WhyChooseUsMessage}>
+              <p>
+                What can we create for you, how can improve or maintain you
+                current look? We always learning something fresh and new while
+                keeping with today&apos;s trends.
+              </p>
+              <Button
+                variant='contained'
+                classes={{ root: classes.button }}
+                onClick={() => history.push('/About')}
+              >
+                View More
+              </Button>
+            </div>
           </Fade>
           <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
           <div className={classes.rectangle} />
