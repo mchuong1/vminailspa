@@ -46,6 +46,7 @@ const Footer = () => {
       </div>
       <span>Copyright &copy; 2021 V&#38;Mi Nail Spa | All Rights Reserved</span>
       <span>Web Development by: <span className={classes.link} aria-hidden='true' onClick={() => goToSocial('https://mattchu-portfolio.netlify.app/')}>Matthew Chuong</span></span>
+      <span>Virtual Tour by: <span className={classes.link} aria-hidden='true' onClick={() => goToSocial('https://m.facebook.com/Vtek-103693298707681/')}>Vtek</span></span>
     </div>
   );
 };
