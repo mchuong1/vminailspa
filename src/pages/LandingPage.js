@@ -6,7 +6,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
-import { AdvancedImage, lazyload, responsive } from '@cloudinary/react';
+import { AdvancedImage, lazyload, responsive, placeholder } from '@cloudinary/react';
 import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-reveal';
@@ -337,7 +337,7 @@ const LandingPage = (props) => {
       <AdvancedImage
         cldImg={image}
         style={{ width: '100%', ...inlineStyle }}
-        plugins={[lazyload(), responsive()]}
+        plugins={[lazyload(), responsive({steps: [800, 1000, 1400]}), placeholder({ mode: 'blur' })]}
       />
       <h1>{title}</h1>
       <p>{description}</p>
@@ -381,7 +381,11 @@ const LandingPage = (props) => {
               </Button>
             </Fade>
           </div>
-          <AdvancedImage cldImg={smileGirl} className={classes.smileGirl} />
+          <AdvancedImage
+            cldImg={smileGirl}
+            className={classes.smileGirl}
+            plugins={[lazyload(), responsive({steps: [800, 1000, 1400]}), placeholder({ mode: 'blur' })]}
+          />
           <div className={classes.circle} />
         </div>
         <div className={classes.aboutSection}>
@@ -407,6 +411,7 @@ const LandingPage = (props) => {
           <AdvancedImage
             cldImg={coverEyesGirl}
             className={classes.coverEyesGirl}
+            plugins={[lazyload(), responsive({steps: [800, 1000, 1400]}), placeholder({ mode: 'blur' })]}
           />
           <div className={classes.rectangle} style={{ right: 0 }} />
         </div>
@@ -464,7 +469,7 @@ const LandingPage = (props) => {
               </Button>
             </div>
           </Fade>
-          <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} />
+          <AdvancedImage cldImg={nailBottles} className={classes.nailBottles} plugins={[lazyload(), responsive({steps: [800, 1000, 1400]}), placeholder({ mode: 'blur' })]}/>
           <div className={classes.rectangle} />
         </div>
         <Testimonials />

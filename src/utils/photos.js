@@ -5,7 +5,7 @@ const cld = new Cloudinary({
     cloudName: 'dgpijcm0x',
   },
 });
- 
+
 export const photos = [
   {
     src: 'https://res.cloudinary.com/dgpijcm0x/image/upload/v1631376471/VNMiNailSpa/Check_In.jpg',
