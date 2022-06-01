@@ -54,8 +54,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   WhyChooseUs: {
-    // position: 'relative',
-    // height: '125vh',
     '& h1': {
       // position: 'absolute',
       fontSize: '53px',
