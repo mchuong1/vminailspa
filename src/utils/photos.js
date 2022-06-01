@@ -1,4 +1,4 @@
-import { Cloudinary } from '@cloudinary/base';
+import { Cloudinary } from '@cloudinary/url-gen';
 
 const cld = new Cloudinary({
   cloud: {
@@ -96,10 +96,10 @@ export const gallery = [
   }
 ];
 
-export const smileGirl = cld.image('VNMiNailSpa/SmileGirl');
-export const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl');
-export const manicure = cld.image('VNMiNailSpa/Manicure');
-export const pedicure = cld.image('VNMiNailSpa/Pedicure');
-export const massage = cld.image('VNMiNailSpa/Waxing');
-export const nailBottles = cld.image('VNMiNailSpa/Nail_Bottles');
-export const logo = cld.image('VNMINailSpa/MiLogo');
+export const smileGirl = cld.image('VNMiNailSpa/SmileGirl').quality('auto').format('auto');
+export const coverEyesGirl = cld.image('VNMiNailSpa/CoverEyesGirl').quality('auto').format('auto');
+export const manicure = cld.image('VNMiNailSpa/Manicure').quality('auto').format('auto');
+export const pedicure = cld.image('VNMiNailSpa/Pedicure').quality('auto').format('auto');
+export const massage = cld.image('VNMiNailSpa/Waxing').quality('auto').format('auto');
+export const nailBottles = cld.image('VNMiNailSpa/Nail_Bottles').quality('auto').format('auto');
+export const logo = cld.image('VNMINailSpa/MiLogo').quality('auto').format('auto');
