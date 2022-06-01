@@ -14,3 +14,7 @@ status = 200
 	no-cache,
 	no-store,
 	must-revalidate'''
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+  [plugins.inputs]
+  cloudName = "dgpijcm0x"
