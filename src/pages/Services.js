@@ -7,8 +7,8 @@ import {
   nailEnhancement,
   additionalServices,
   waxing,
-  shape,
-  soakOff,
+  addOnServices,
+  dippingPowder,
 } from '../utils/services';
 import Service from '../components/Service';
 
@@ -87,18 +87,18 @@ const Services = () => {
           {manicure.map((service) => (<Service {...service}/>))}
           <h1>Pedicure</h1>
           {pedicure.map((service) => (<Service {...service}/>))}
+          <h1>Dipping Powder - Healthy Nails</h1>
+          {dippingPowder.map((service) => (<Service {...service}/>))}
           <h1>Nail Enhancements</h1>
           {nailEnhancement.map((service) => (<Service {...service}/>))}
           <h1>Waxing</h1>
           {waxing.map((service) => (<Service {...service}/>))}
-          <h1>Kid Services</h1>
-          {kidServices.map((service) => (<Service {...service}/>))}
           <h1>Additional Services</h1>
           {additionalServices.map((service) => (<Service {...service}/>))}
-          <h1>Shape</h1>
-          {shape.map((service) => (<Service {...service}/>))}
-          <h1>Soak Off</h1>
-          {soakOff.map((service) => (<Service {...service}/>))}
+          <h1>Add-On Services</h1>
+          {addOnServices.map((service) => (<Service {...service}/>))}
+          <h1>Kid Services</h1>
+          {kidServices.map((service) => (<Service {...service}/>))}
           <div className={classes.waveContainer}>{waves}</div>
         </div>
       </div>
