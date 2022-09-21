@@ -3,7 +3,7 @@ export const manicure = [
     name: 'Basic',
     description:
       'Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.',
-    price: 19,
+    price: 20,
   },
   {
     name: 'V&Mi - Deluxe Manicure',
@@ -13,7 +13,7 @@ export const manicure = [
   {
     name: 'Gel Manicure',
     description: 'A hybrid product that applies like polish but wears like gel, no chips, last longer than regular nail polish, and best of all have no need for drying time! Provides a strong natural nail protection with a shiny finish. ',
-    price: 33,
+    price: 35,
   },
 ];
 
@@ -41,6 +41,10 @@ export const pedicure = [
     description: 'Jelly pedi is an unique spa pedicure treatment, that incorporates jelly into an ordinary pedicure treatment for the ultimate luxurious pedicure experience. Jelly holds water temperature 4 times longer than water, ideal for spa. 10 minutes foot soak with Jelly, followed our Deluxe pedicure. (Speical neck wrap relaxation)',
     price: 60,
     time: '50 minutes',
+  },
+  {
+    name: 'Additional Gel Polish Service',
+    price: 17,
   },
 ];
 
