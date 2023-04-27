@@ -21,7 +21,7 @@ export const pedicure = [
   {
     name: 'Basic',
     description: 'Includes nail trimming and shaping, cuticle grooming, buffing, a lotion massage, hot towel service, and finished with your choice of color.',
-    price: 30,
+    price: 32,
     time: '25 minutes',
   },
   {
@@ -33,7 +33,7 @@ export const pedicure = [
   {
     name: 'Organic Pedicure',
     description: 'An extension of our basic pedicure. This includes a callus treatment for your feet in your choice of an exfoliating sugar scrub (kavender, lemon, or mandrin) that removes dead skin.',
-    price: 47,
+    price: 50,
     time: '40 minutes',
   },
   {
@@ -51,19 +51,19 @@ export const pedicure = [
 export const kidServices = [
   {
     name: 'Princess Manicure',
-    price: 14,
+    price: 15,
   },
   {
     name: 'Princess Pedicure',
-    price: 23,
+    price: 25,
   },
   {
     name: 'Polish Change - Hands',
-    price: 7,
+    price: 8,
   },
   {
     name: 'Polish Change - Feet',
-    price: 10,
+    price: 12,
   },
 ];
 
@@ -145,11 +145,11 @@ export const additionalServices = [
   },
   {
     name: 'Polish Change - Hands',
-    price: 10,
+    price: 12,
   },
   {
     name: 'Polish Change - Feet',
-    price: 14,
+    price: 15,
   },
   {
     name: 'Cut Down',
