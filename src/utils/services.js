@@ -26,7 +26,7 @@ export const pedicure = [
   },
   {
     name: 'V&Mi - Deluxe Pedicure',
-    description: 'An extension of our Basic Pedicure. This includes your choice of an exfoliating sugar scrub (lavender, green tea, and callus remover) that removes dead skin and paraffin to soften your arms. Followed by hot towel service with an extended foot and leg massage.',
+    description: 'An extension of our Basic Pedicure. This includes your choice of an exfoliating sugar scrub (lavender, green tea, and callus remover) that removes dead skin. Followed by hot towel service with an extended foot and leg massage.',
     price: 40,
     time: '35 minutes',
   },
