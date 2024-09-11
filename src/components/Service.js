@@ -27,7 +27,7 @@ const Service = (props) => {
     <div className={classes.root}>
       <div className={classes.serviceNameRow}>
         <h3>{name}</h3>
-        <span>{price}</span>
+        <!--<span>{price}</span>-->
       </div>
       <span>{description}</span>
     </div>
