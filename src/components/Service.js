@@ -21,7 +21,9 @@ const useStyles = makeStyles({
 const Service = (props) => {
 
   const classes = useStyles();
-  const { name, description, price } = props;
+  const { name, description,
+    // price
+  } = props;
 
   return (
     <div className={classes.root}>
