@@ -40,7 +40,7 @@ const Service = (props) => {
 Service.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
-  price: PropTypes.string.isRequired,
+  // price: PropTypes.string.isRequired,
 }
 
 Service.defaultProps = {
