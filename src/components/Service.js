@@ -21,13 +21,15 @@ const useStyles = makeStyles({
 const Service = (props) => {
 
   const classes = useStyles();
-  const { name, description, price } = props;
+  const { name, description,
+    // price
+  } = props;
 
   return (
     <div className={classes.root}>
       <div className={classes.serviceNameRow}>
         <h3>{name}</h3>
-        <span>{price}</span>
+        {/* <span>{price}</span> */}
       </div>
       <span>{description}</span>
     </div>
@@ -38,7 +40,7 @@ const Service = (props) => {
 Service.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
-  price: PropTypes.string.isRequired,
+  // price: PropTypes.string.isRequired,
 }
 
 Service.defaultProps = {
