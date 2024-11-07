@@ -15,7 +15,7 @@ import Maintenance from './pages/Maintenance';
 function App() {
   return (
     <div data-test="component-app">
-      <Maintenance />
+      {/* <Maintenance /> */}
       <Switch>
         <ScrollToTop />
         <Navbar />
