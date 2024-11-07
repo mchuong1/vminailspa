@@ -10,7 +10,7 @@ import Services from './pages/Services';
 import OnlineBooking from './pages/OnlineBooking';
 import PhotoGallery from './pages/Gallery';
 import VirtualTour from './pages/VirtualTour';
-import Maintenance from './pages/Maintenance';
+// import Maintenance from './pages/Maintenance';
 
 function App() {
   return (
